@@ -1,0 +1,28 @@
+.eduCard {
+	background-size: 200px 100px 150px 100px;
+	width: 620px;
+	/* clip-path: polygon(0 0, 100% 23%, 100% 65%, 0% 100%); */
+	/* clip-path: polygon(0 0, 0% 100%, 100% 100%, 0% 100%); */
+	z-index: -2;
+}
+.frontimage img {
+	filter: blur(px);
+}
+.frontimage {
+	position: relative;
+	display: inline-block;
+	padding-bottom: 50px;
+	overflow: hidden;
+}
+
+.frontimage::after {
+	content: "";
+	position: absolute;
+	background-image: src("../../../public/img/artAndEdu.jpeg");
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	-webkit-mask-image: linear-gradient(to left, #fff, transparent);
+	mask-image: linear-gradient(to right, #fff, transparent);
+}
