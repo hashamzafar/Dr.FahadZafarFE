@@ -14,6 +14,7 @@ import ArtEduMain from './Components/Arti&eduMain/artEduMain';
 import Login from "./Components/LoginAdmin/LoginAdmin"
 import Admin from "./Components/Admin/Admin"
 import AdminPerio from "./Components/Admin/AdminPerio/AdminPerio"
+import AdminImplant from './Components/Admin/AdminImplant/AdminImplant';
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
         {/* make these route private */}
         <Route exact path="/admin" render={(routerProps) => <Admin />} />
         <Route exact path="/admin/perio" render={(routerProps) => <AdminPerio />} />
+        <Route exact path="/admin/implant" render={(routerProps) => <AdminImplant />} />
 
       </Router>
       <Footer />
