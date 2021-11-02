@@ -64,7 +64,7 @@ const AdminPerio = () => {
             />
             <div className="mb-4">
                 <Button
-                    variant="primary"
+                    variant=""
                     className="btn-large"
                     value="/crown"
                     onClick={(e) => changeEndpoint(e)}
@@ -76,7 +76,7 @@ const AdminPerio = () => {
                     Crown Lengthe Surgery{" "}
                 </Button>{" "}
                 <Button
-                    variant="secondary"
+                    variant=""
                     value="/frenulectomy"
                     onClick={(e) => changeEndpoint(e)}
                 >
@@ -87,7 +87,7 @@ const AdminPerio = () => {
                     Frenulectomy
                 </Button>{" "}
                 <Button
-                    variant="success"
+                    variant=""
                     value="/gum"
                     onClick={(e) => changeEndpoint(e)}
                 >
@@ -98,7 +98,7 @@ const AdminPerio = () => {
                     Gum Plastic Surgery
                 </Button>{" "}
                 <Button
-                    variant="warning"
+                    variant=""
                     value="/canine"
                     onClick={(e) => changeEndpoint(e)}
                 >
@@ -108,7 +108,7 @@ const AdminPerio = () => {
                     Impacted Canine Exposure
                 </Button>{" "}
                 <Button
-                    variant="danger"
+                    variant=""
                     value="/nonsurgical"
                     onClick={(e) => changeEndpoint(e)}
                 >
@@ -118,7 +118,7 @@ const AdminPerio = () => {
                     Non Surgical Therapy
                 </Button>
                 <Button
-                    variant="info"
+                    variant=""
                     value="/periodontal"
                     onClick={(e) => changeEndpoint(e)}
                 >
@@ -128,7 +128,7 @@ const AdminPerio = () => {
                     Periodontal Regenerative Surgery
                 </Button>{" "}
                 <Button
-                    variant="dark"
+                    variant=""
                     value="/pocketelimination"
                     onClick={(e) => changeEndpoint(e)}
                 >

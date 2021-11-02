@@ -7,6 +7,9 @@ import axios from 'axios'
 
 const PostForm = (props) => {
 
+
+
+
     const [fileInputState, setFileInputState] = useState("");
     const [selectedFile, setSelectedFile] = useState("");
     const [previewSource, setPreviewSource] = useState();
@@ -34,7 +37,7 @@ const PostForm = (props) => {
     const uploadImage = async (base64EncodedImage) => {
         console.log(base64EncodedImage)
         try {
-            await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint, {
+            await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint + "/image", {
                 method: "POST",
                 body: JSON.stringify({ image: base64EncodedImage }),
                 headers: { "Content-type": "application/json" }

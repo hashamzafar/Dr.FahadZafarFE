@@ -1,44 +1,53 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa"
-import Jumbotron from "../Jumbotron/Jumbotron"
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 
+import "./contact.scss"
 const Contacts = () => {
     return (
         <>
-            <Jumbotron />
-            <Container style={{ marginTop: '70px' }}>
-                <h3>
-                    Get in touch ...
-                </h3>
-                <Row>
-                    <Col md={4}>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="../../img/profile.jpg" className="profile" />
-                            <Card.Body>
-                                <Card.Title>Contact here</Card.Title>
-                                <Card.Text>
-                                    <div>Clinic Address 1:
-                                        via saponaro,24 milano ,itlay</div>
-                                    <div>Clinic Address 1:
-                                        via saponaro,24 milano ,itlay</div>
-                                    <div>Mobile no : +39 351290000</div>
-                                    <div>clinic no :+39020000000</div>
-                                    <h5 className="mt-3"> Follow me for more!</h5>
-                                    <a href="https://www.facebook.com/fahad.zafar.505 " target="_blank">   <FaFacebookF /></a>
-                                    <a href="https://www.instagram.com/fz_perio/" target="_blank"> <FaInstagram /></a>
 
-                                    <a href="https://www.linkedin.com/in/fahad-zafar-81b001179/" target="_blank"><FaLinkedin /></a>
-                                </Card.Text>
+            <div class="containe ">
+                <div class="card ">
+                    <div class="card__image-container">
+                        <img class="card__image" src="../../img/profile.jpg" alt="" />
+                    </div>
 
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col md={6}>
-                        <img src="http://www.overplace.com/files/jumbotron/82060/jumbo_82060_201901091558027a2b9c808a2581006e9e9fecd1f3047f.jpg" alt="" width="725px" height="600" />
-                    </Col>
-                </Row>
+                    <svg class="card__svg" viewBox="0 0 800 500">
 
-            </Container>
+                        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333" />
+                        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent" />
+                    </svg>
+
+                    <div class="card__content">
+                        <h1 class="card__title">Dr. Fahad Zafar</h1>
+                        <p><div>Clinic Address 1:
+                            via saponaro,24 milano ,itlay</div>
+                            <div>Clinic Address 1:
+                                via saponaro,24 milano ,itlay</div>
+                            <div>Mobile no : +39 351290000</div>
+                            <div>clinic no :+39020000000</div></p>
+                    </div>
+
+                    <div class="social twitter">
+                        <a href="https://twitter.com/" target="_blank">
+                            <FaFacebookF />
+                        </a>  <div class="social linkedin">
+                            <a href="https://www.linkedin.com/in/" target="_blank">
+                                <FaLinkedin />
+                            </a>
+                        </div>
+
+                        <div class="social codepen">
+                            <a href="https://codepen.io/" target="_blank">
+                                <FaInstagram />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
         </>
     )
 }

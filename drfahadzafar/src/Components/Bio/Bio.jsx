@@ -1,4 +1,4 @@
-import { Row, Col } from "react-bootstrap"
+import { Row, Col } from 'react-bootstrap'
 import "./style.css"
 
 
@@ -6,27 +6,41 @@ import "./style.css"
 
 const Bio = () => {
     return (
-        <div className='bg-dark pt-3 backg postition-fix'>
+        <Row>
+            <Col id="show_bg" >
+                <a href="/home">Home / About</a>
+                <h1>ABOUT ME</h1>
+                <hr />
+                <div>Perio Specialist</div>
+                <img src="../../img/profile.jpg" alt="" className="profile" />
 
-            <Row>
-                {/* <Col md={4} className='mt-5' >
-                    <h2>Articles &amp Education</h2>
-                    <hr />
-                    <img src="../../img/profile.jpg" alt="" width="300" height="300" className="profile" />
-                    <h5 className="mt-5"> Dr. Fahad Zafar</h5>
-                    <hr />
-                    <h6>Specialist periodontis and Implant Surgery</h6>
+            </Col>
+            <Col lg={8}>
+                <div className=' text-color py-3'>
+                    <div class="patterns">
+                        <svg width="100%" height="100%">
+                            <defs>
+                                <pattern id="polka-dots" x="0" y="0" width="100" height="100"
+                                    patternUnits="userSpaceOnUse">
+                                    <circle fill="#be9ddf" cx="25" cy="25" r="3"></circle>
+                                </pattern>
+                                <style>
+                                    @import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+                                </style>
 
-                </Col> */}
-                <Col sm={12} className="text-color mx-2">
-                    {/* <img src="../../img/logo2.png" className="logo mb-3" alt="" width="200" height="200" /> */}
-                    <h2>
-                        Bio
-                    </h2>
+                            </defs>
+                            <text x="50%" y="60%" text-anchor="middle"  >
+                                Dr.Fahad Zafar
+                            </text>
+                        </svg>
+                    </div>
+
+                    {/* <img src="../../img/logo2.png" className="logo " alt="" width="150" height="150" /> */}
+
                     <h4>
                         We are dedicated to Excellence in Dentistry and have been looking after patients from across the country and abroad since 2003.
                     </h4>
-                    <p className="mb-5">
+                    <p className="">
                         We have a patient centred approach, based on the individual wants and needs of those we serve. Our environment is the perfect balance between a relaxed and friendly ambiance with a clean and professional feel.
 
                         Our dental practice in Bearwood is ideally located to serve patients from Birmingham and surrounding areas such as Smethwick, West Bromwich, Walsall, Dudley and Halesowen, whilst many people travel from all over the country due to our reputation for the treatment of gum disease and dental implants.
@@ -35,11 +49,12 @@ const Bio = () => {
 
                         The minute you step through our door you are made to feel comfortable within a warm, friendly environment. Have a cup of tea or coffee whilst you complete your medical history forms prior to seeing the dentist.
                     </p>
-                </Col>
 
-            </Row>
 
-        </div>
+                </div>
+            </Col>
+
+        </Row>
     )
 }
 export default Bio

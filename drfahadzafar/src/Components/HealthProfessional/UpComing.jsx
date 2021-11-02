@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap"
 
 const UpComing = () => {
     return (
-        <Container>
+        <>
             <h1>Up Coming Courses...</h1>
             <h3>Dental esthetics and oral health-related quality of life in young adults</h3>
             <Row>
@@ -46,16 +46,14 @@ const UpComing = () => {
                     </p>
                 </Col>
                 <Col md={5}>
-                    <img src="https://bluewavedentistry.com/wp-content/uploads/2019/07/esthetic-dentistry.jpg" alt="" width="500" height="250" className="mb-3" />
-                    <img src="https://bluewavedentistry.com/wp-content/uploads/2019/07/esthetic-dentistry.jpg" alt="" width="500" height="250" className="mb-3" />
-                    <img src="https://bluewavedentistry.com/wp-content/uploads/2019/07/esthetic-dentistry.jpg" alt="" width="500" height="250" className="mb-3" />
-                    <img src="https://bluewavedentistry.com/wp-content/uploads/2019/07/esthetic-dentistry.jpg" alt="" width="500" height="250" className="mb-3" />
+                    {/* <img src="https://bluewavedentistry.com/wp-content/uploads/2019/07/esthetic-dentistry.jpg" alt="" width="300" height="20" />
+                    <img src="https://bluewavedentistry.com/wp-content/uploads/2019/07/esthetic-dentistry.jpg" alt="" width="500" height="250"  /> */}
 
 
                 </Col>
             </Row>
 
-        </Container>
+        </>
     )
 }
 
