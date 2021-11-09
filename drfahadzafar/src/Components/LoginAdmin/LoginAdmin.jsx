@@ -14,8 +14,8 @@ const Login = () => (
         }}
     >
         <Container className="login">
-            <Form id="login">
-                <img src="../../img/logo2.png" className="logo " alt="" width="200" height="200" />
+            <Form id="">
+                <img src="../../img/logo2.png" className="logo mb-4" alt="" />
                 <h3 id="title">Admin Only</h3>
 
                 <div className="form-group">

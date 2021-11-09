@@ -2,9 +2,9 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 85%;
-	height: 85vh;
-	display: flex;
+	min-width: 85%;
+	min-height: 85vh;
+
 	justify-content: center;
 	align-items: center;
 	background-color: lightgrey;
@@ -13,5 +13,4 @@
 	margin-top: 75px;
 	margin-bottom: 100px;
 	margin-left: 150px;
-	/* margin-right: 75px; */
 }

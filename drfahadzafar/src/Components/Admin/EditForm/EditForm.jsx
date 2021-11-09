@@ -32,7 +32,7 @@ const EditForm = (props) => {
     const handleSubmit = async () => {
         try {
             const response = await axios.put(
-                `${process.env.REACT_APP_API_PERIO}` + endpoint + id,
+                `${process.env.REACT_APP_API_PERIO}` + endpoint + props.id,
                 perio
             );
             console.log(response, "check api with axios");
@@ -52,7 +52,7 @@ const EditForm = (props) => {
                 >
                     <ImCancelCircle />
                 </Button> */}
-                <Form.Group controlId="formBasicEmail" className="mx-5">
+                <Form.Group controlId="formBasicEmail" className="mx-5 py-3">
                     <Form.Label>Title</Form.Label>
                     <Form.Control
                         type="text"
@@ -78,7 +78,7 @@ const EditForm = (props) => {
                         label="Image"
                         name="image"
                         onchange={handleFileInputChange}
-                        VALUE={fileInputState}
+                        value={fileInputState}
                     />
                     {previewSource && (
                         <img src={previewSource} alt="chosen" height="300px" />

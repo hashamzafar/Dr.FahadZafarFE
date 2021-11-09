@@ -144,50 +144,50 @@ const AdminPerio = () => {
                     Link
                 </Button>
             </div>
-            <Container>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>image</th>
-                            <th>Edit/Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {perio.map((perioData, i) => (
-                            <tr>
-                                <td>{perioData._id}</td>
-                                <td>{perioData.title}</td>
-                                <td>{perioData.description}</td>
-                                <img src={perioData.image} alt="" width="75px" height="45px" />
-                                <td>
-                                    <Button
-                                        key={i}
-                                        variant="danger"
-                                        className="mx-3"
-                                        value={perioData._id}
-                                        onClick={(e) => deleteItem(perioData._id)}
-                                    >
-                                        <GiTooth />
-                                    </Button>
-                                    <Button variant="secondary" onClick={() => setPostForm(true)}> Edit</Button>
-                                </td>
-                            </tr>
-                        ))}
 
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>image</th>
+                        <th>Edit/Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {perio.map((perioData, i) => (
                         <tr>
-                            <td>Total Cases</td>
-                            <td colSpan="2">50</td>
+                            <td key={i}>{perioData._id}</td>
+                            <td>{perioData.title}</td>
+                            <td>{perioData.description}</td>
+                            <img src={perioData.image} alt="" width="125px" height="75px" className="my-2" />
                             <td>
-                                <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button>
-
+                                <Button
+                                    key={i}
+                                    variant="danger"
+                                    className="mx-3"
+                                    value={perioData._id}
+                                    onClick={(e) => deleteItem(perioData._id)}
+                                >
+                                    <GiTooth />
+                                </Button>
+                                <Button variant="secondary" onClick={(e) => setEditForm(true)}> Edit</Button>
                             </td>
                         </tr>
-                    </tbody>
-                </Table>
-            </Container>
+                    ))}
+
+                    <tr>
+                        <td>Total Cases</td>
+                        <td colSpan="2">50</td>
+                        <td>
+                            <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
+
             <PostForm trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm>
             <EditForm trigger={editForm} setTrigger={setEditForm} endpoint={endpoint} id={perio._id} />
         </div>

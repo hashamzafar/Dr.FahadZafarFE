@@ -34,25 +34,26 @@ const PostForm = (props) => {
         uploadImage(previewSource)
         console.log("submitted")
     }
-    const uploadImage = async (base64EncodedImage) => {
-        console.log(base64EncodedImage)
-        try {
-            await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint + "/image", {
-                method: "POST",
-                body: JSON.stringify({ image: base64EncodedImage }),
-                headers: { "Content-type": "application/json" }
-            })
+    // const uploadImage = async (base64EncodedImage) => {
+    //     console.log(base64EncodedImage)
+    //     try {
+    //         await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint, {
+    //             method: "POST",
+    //             body: JSON.stringify({ image: base64EncodedImage }),
+    //             headers: { "Content-type": "application/json" }
+    //         })
 
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
 
 
     const { endpoint } = props
     const [perio, setPerio] = useState({
         title: "",
         description: "",
+        image: "",
     });
 
 
@@ -64,7 +65,7 @@ const PostForm = (props) => {
             const response = await axios.post(`${process.env.REACT_APP_API_PERIO}` + endpoint, perio)
             console.log(response, 'check api with axios')
 
-            console.log("submitted2")
+            console.log("submitted 2")
 
         } catch (error) { }
     }
@@ -73,11 +74,20 @@ const PostForm = (props) => {
     }
     console.log(perio, "sadsdasjdhkasjd")
 
-    return props.trigger ? (
-        <Form className="popup" onSubmit={handleSubmit, handleSubmitFile}>
-            <Container>
 
-                <Form.Group controlId="formBasicEmail" className="mx-5">
+    const uploadImage = (files) => {
+        const formData = new FormData()
+        formData.append("file", file[0])
+    }
+
+
+
+    return props.trigger ? (
+        <Container>
+            <Form className="popup" onSubmit={handleSubmit, handleSubmitFile, uploadImage}>
+
+
+                <Form.Group controlId="formBasicEmail" className="mx-5 title">
                     <Form.Label>Title</Form.Label>
                     <Form.Control type="text" name="title" onChange={(e) => Inputhandler(e)} placeholder="Title" />
                 </Form.Group>
@@ -97,15 +107,17 @@ const PostForm = (props) => {
                     ></textarea>
                 </Form.Group>
                 <Form.Group className="mx-5">
-                    <Form.File
+                    {/* <Form.File
                         id="exampleFormControlFile1"
                         type="file"
                         name="image"
                         onChange={handleFileInputChange}
                         value={fileInputState}
-                    />
+                    /> */}
+                    <input type="file" onchange={(event) => { uploadImage(event.target.files) }} />
 
                 </Form.Group>
+
 
                 <Button variant="primary" type="submit" className="mx-5">
                     Submit
@@ -116,12 +128,12 @@ const PostForm = (props) => {
                 >
                     Close
                 </Button>
-                {previewSource && (
-                    <img src={previewSource} alt="chosen" height="300px" />
-                )}
-            </Container>
-        </Form>
 
+                {previewSource && (
+                    <img src={previewSource} alt="chosen" height="100px" width="100px" className="ml-auto" />
+                )}
+            </Form>
+        </Container>
 
     ) : (
         ""

@@ -1,10 +1,12 @@
-import "./perioCases.css"
-import { Card, Button, Col, Row } from "react-bootstrap"
+// import "./perioCases.css"
+import { Card, Button, Col, Row, Container } from "react-bootstrap"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { FaTooth } from "react-icons/fa";
 import ReadMore from "./ReadMore/ReadMore"
 import { Route } from "react-router-dom"
+import "../../MainCard/mainCard.scss"
+
 const PerioCases = () => {
     const [perio, setPerio] = useState([]);
     const [endpoint, setEndpoint] = useState("/crown");
@@ -113,25 +115,33 @@ const PerioCases = () => {
                 </Button>{" "}
 
             </div>
-            <div class="card-img my-5">
+            <Container >
                 <Row>
                     {perio.map((perioData, i) =>
-                        <Col md={3} className="m-5">
-                            <div style={{ width: '' }} className="card-perio ">
-                                <img variant="top" src={perioData.image} className="card-image" />
-                                <Card.Body>
-                                    <Card.Title>{perioData.title}</Card.Title>
-                                    <Card.Text>
-                                        {perioData.description}
-                                    </Card.Text>
-                                    <Button variant="" className="button" onClick={<ReadMore id={perioData._id} />} >Read More</Button>
 
-                                </Card.Body>
-                            </div></Col>)}
+                        <Col>
+                            <div className="cards ">
+                                <div className="face face1">
+                                    <div className="content">
+                                        <img src={perioData.image} />
+                                        <h3>{perioData.title}</h3>
+                                    </div>
+                                </div>
+                                <div className="face face2">
+                                    <div className="content">
+                                        <p>{perioData.description}.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+
+                    )
+                    }
 
 
                 </Row>
-            </div>
+            </Container>
 
         </>
     )

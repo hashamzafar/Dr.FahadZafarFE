@@ -11,7 +11,7 @@ const MainCard = () => {
             <h1>Courses & Lecturing</h1>
             <Container>
 
-                <div className="card">
+                <div className="cards">
                     <div className="face face1">
                         <div className="content">
                             <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true" />
@@ -25,7 +25,7 @@ const MainCard = () => {
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="cards">
                     <div className="face face1">
                         <div className="content">
                             <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true" />

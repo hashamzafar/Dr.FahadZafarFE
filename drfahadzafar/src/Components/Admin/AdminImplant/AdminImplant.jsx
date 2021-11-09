@@ -36,14 +36,14 @@ const AdminImplant = () => {
         <div>
             <img src="../../../img/logo2.png" className="logo mb-4" alt="" width="200" height="200" />
             <div className="mb-4">
-                <Button variant="primary" className="btn-large" value="/esthetic" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div> Esthetic Problems Implants </Button>{' '}
-                <Button variant="secondary" value="/guidedbone" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Guided Bone Regeneration</Button>{' '}
-                <Button variant="success" value="/Implantsurgery" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Implant Surgery</Button>{' '}
-                <Button variant="warning" value="/peri" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Peri Implantitis Treatment</Button>{' '}
-                <Button variant="danger" value="/sinus" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Sinus Lift Procedure</Button>
-                <Button variant="info" value="" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Periodontal Regenerative Surgery</Button>{' '}
+                <Button variant="" className="btn-large" value="/esthetic" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div> Esthetic Problems Implants </Button>{' '}
+                <Button variant="" value="/guidedbone" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Guided Bone Regeneration</Button>{' '}
+                <Button variant="" value="/implantsurgery" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Implant Surgery</Button>{' '}
+                <Button variant="" value="/peri" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Peri Implantitis Treatment</Button>{' '}
+                <Button variant="" value="/sinus" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Sinus Lift Procedure</Button>
 
-                <Button variant="dark" value="/pocketelimination" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Pocket Elimination Surgery</Button>{' '}
+
+
                 <Button variant="link"><div><FaTooth /></div>Link</Button>
             </div>
             <Table striped bordered hover>
@@ -59,9 +59,9 @@ const AdminImplant = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {implant.map((implantData) => (
+                    {implant.map((implantData, i) => (
                         <tr>
-                            <td>{implantData._id}</td>
+                            <td key={i}>{implantData._id}</td>
                             <td>{implantData.title}</td>
                             <td>{implantData.description}</td>
                             <td><img src={implantData.image} alt="" width="30%" height="30px" /></td>

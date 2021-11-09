@@ -1,25 +1,21 @@
 img {
-	max-width: 100%;
-}
-
-.containe {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 82vh;
-	background: white;
+	max-width: 80%;
 }
 
 .card {
 	position: relative;
 	background: #333;
 	width: 400px;
-	// height: 75vh;
+	height: 85vh;
 	border-radius: 6px;
 	padding: 2rem;
 	color: #aaa;
 	box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
 	overflow: hidden;
+
+	&__image-container {
+		margin: -2rem -2rem 1rem -2rem;
+	}
 
 	&__line {
 		opacity: 0;
