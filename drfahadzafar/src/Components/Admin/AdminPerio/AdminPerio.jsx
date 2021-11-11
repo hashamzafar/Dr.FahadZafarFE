@@ -5,11 +5,17 @@ import PostForm from "../PostForm/PostForm";
 import axios from "axios";
 import EditForm from "../EditForm/EditForm";
 import { GiTooth } from "react-icons/gi"
+import PostModel from "../../Testpost/TestPost"
+
+
+
+
 const AdminPerio = () => {
     const [perio, setPerio] = useState([]);
     const [endpoint, setEndpoint] = useState("/crown");
     const [postForm, setPostForm] = useState(false)
     const [editForm, setEditForm] = useState(false)
+
     useEffect(async () => {
         getPeiro()
     }, [endpoint]);
@@ -183,13 +189,17 @@ const AdminPerio = () => {
                         <td>
                             <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button>
 
+
                         </td>
                     </tr>
                 </tbody>
             </Table>
 
-            <PostForm trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm>
+            {/* <PostForm trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm> */}
+            <PostModel trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostModel>
+
             <EditForm trigger={editForm} setTrigger={setEditForm} endpoint={endpoint} id={perio._id} />
+
         </div>
     );
 };

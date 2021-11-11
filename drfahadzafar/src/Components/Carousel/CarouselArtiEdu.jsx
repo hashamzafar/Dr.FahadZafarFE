@@ -1,5 +1,5 @@
 import { Carousel, Row, Col, } from "react-bootstrap"
-import Treatment from "../Treatment/Treatment"
+// import Treatment from "../Treatment/Treatment"
 import Cards from "../Arti&eduMain/Cards/Cards"
 
 

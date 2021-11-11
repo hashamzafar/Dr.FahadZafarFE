@@ -34,19 +34,19 @@ const PostForm = (props) => {
         uploadImage(previewSource)
         console.log("submitted")
     }
-    // const uploadImage = async (base64EncodedImage) => {
-    //     console.log(base64EncodedImage)
-    //     try {
-    //         await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint, {
-    //             method: "POST",
-    //             body: JSON.stringify({ image: base64EncodedImage }),
-    //             headers: { "Content-type": "application/json" }
-    //         })
+    const uploadImage = async (base64EncodedImage) => {
+        console.log(base64EncodedImage)
+        try {
+            await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint, {
+                method: "POST",
+                body: JSON.stringify({ image: base64EncodedImage }),
+                headers: { "Content-type": "application/json" }
+            })
 
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
 
     const { endpoint } = props
@@ -75,16 +75,16 @@ const PostForm = (props) => {
     console.log(perio, "sadsdasjdhkasjd")
 
 
-    const uploadImage = (files) => {
-        const formData = new FormData()
-        formData.append("file", file[0])
-    }
+    // const uploadImage = (file) => {
+    //     const formData = new FormData()
+    //     formData.append("file", file[0])
+    // }
 
 
 
     return props.trigger ? (
         <Container>
-            <Form className="popup" onSubmit={handleSubmit, handleSubmitFile, uploadImage}>
+            <Form className="popup" onSubmit={handleSubmit}>
 
 
                 <Form.Group controlId="formBasicEmail" className="mx-5 title">
@@ -107,14 +107,18 @@ const PostForm = (props) => {
                     ></textarea>
                 </Form.Group>
                 <Form.Group className="mx-5">
-                    {/* <Form.File
+                    <Form.File
                         id="exampleFormControlFile1"
                         type="file"
                         name="image"
                         onChange={handleFileInputChange}
                         value={fileInputState}
-                    /> */}
-                    <input type="file" onchange={(event) => { uploadImage(event.target.files) }} />
+                    />
+                    {/* <input type="file"
+                        id="exampleFormControlFile1"
+                        name="image"
+                        onChange={(event) => { uploadImage(event.target.file) }}
+                        value={handleFileInputChange} /> */}
 
                 </Form.Group>
 
