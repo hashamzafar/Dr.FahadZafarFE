@@ -41,7 +41,7 @@ const PostForm = (props) => {
 
         if (e.target && e.target.files[0]) {
             formData.append('image', e.target.files[0])
-            setPerio(e.target.files[0])
+            // setPerio({ ...perio, image: e.target.files[0] })
             previewFile(e.target.files[0])
         } else {
             console.log("image upload not succeded")
@@ -49,9 +49,14 @@ const PostForm = (props) => {
 
     }
     const handleSubmit = async () => {
+        // e.preventDefault()
+        formData.append("title", perio.title)
+        formData.append("description", perio.description)
         try {
 
-            const response = await axios.post(`${process.env.REACT_APP_API_PERIO}` + endpoint, perio, { formData })
+            const response = await axios.post(`${process.env.REACT_APP_API_PERIO}${endpoint}`, formData, {
+                // headers: { 'Content-Type': 'application/json' }
+            })
             console.log(response, 'check api with axios')
 
             console.log("submitted 2")
@@ -61,6 +66,7 @@ const PostForm = (props) => {
 
     const Inputhandler = (e) => {
         setPerio({ ...perio, [e.target.name]: e.target.value });
+        // setPerio({ ...perio, image: e.target.files[0] })
     }
 
     return props.trigger ? (
