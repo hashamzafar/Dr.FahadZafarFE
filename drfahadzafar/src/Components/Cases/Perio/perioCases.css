@@ -1,0 +1,52 @@
+/* .card-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+	transform-origin: center;
+	transform: perspective(800px) rotateY(25deg);
+	transition: 0.5s;
+}
+
+.card-image:hover {
+	transform: perspective(800px) rotateY(0deg);
+	opacity: 1;
+}
+.periocard {
+	position: relative;
+	background: #333;
+
+	border-radius: 6px;
+	padding: 2rem;
+	color: #aaa;
+	box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+} */
+/* <!-- HTML !--> */
+/* <button class="button-34" role="button">Button 34</button> */
+
+/* CSS */
+/* .button {
+	background: #314978;
+	border-radius: 999px;
+	box-shadow: #314978 0 10px 20px -10px;
+	box-sizing: border-box;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+		NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+		EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+		"Noto Sans", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	opacity: 1;
+	outline: 0 solid transparent;
+	padding: 8px 18px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: fit-content;
+	word-break: break-word;
+	border: 0;
+} */

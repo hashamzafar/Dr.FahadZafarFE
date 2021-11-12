@@ -1,11 +1,13 @@
 .App {
 	text-align: center;
+
+	/* background-color: linear-gradient(to bottom right, red, rgb(0, 0, 0)); */
 }
 
-.App-logo {
+/* .App-logo {
 	height: 40vmin;
 	pointer-events: none;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
 	.profile {
@@ -17,6 +19,9 @@
 		animation: App-logo-spin infinite 10s linear;
 		animation-delay: 5s;
 	}
+}
+.logo {
+	border-radius: 50%;
 }
 
 .App-header {

@@ -1,42 +1,44 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa"
-
-
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
+import SocialCards from "../SocialCards/SocialCards"
+// import { FaFacebookF } from "react-icons/fa"
+import "./contact.scss"
 const Contacts = () => {
     return (
-        <Container style={{ marginTop: '70px' }}>
-            <h3>
-                Get in touch ...
-            </h3>
-            <Row>
-                <Col md={4}>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../../img/profile.jpg" className="profile" />
-                        <Card.Body>
-                            <Card.Title>Contact here</Card.Title>
-                            <Card.Text>
-                                <div>Clinic Address 1:
+        <>
+
+            <Container class="container">
+                <Row>
+                    <Col md={6}>
+
+                        <Card class="card mt-4">
+                            <div class="card__image-container">
+                                <img class="card__image mt-3" src="../../img/profile.jpg" alt="" />
+                            </div>
+                            <svg class="card__svg" viewBox="0 0 800 500">
+
+                                <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333" />
+                                <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent" />
+                            </svg>
+
+                            <div class="card__content">
+                                <h1 class="card__title">Dr. Fahad Zafar</h1>
+                                <h3>periodontal & implants Specialist</h3>
+                                <p><div>Clinic Address 1:
                                     via saponaro,24 milano ,itlay</div>
-                                <div>Clinic Address 1:
-                                    via saponaro,24 milano ,itlay</div>
-                                <div>Mobile no : +39 351290000</div>
-                                <div>clinic no :+39020000000</div>
-                                <h5 className="mt-3"> Follow me for more!</h5>
-                                <a href="https://www.facebook.com/fahad.zafar.505 " target="_blank">   <FaFacebookF /></a>
-                                <a href="https://www.instagram.com/fz_perio/" target="_blank"> <FaInstagram /></a>
+                                    <div>Clinic Address 1:
+                                        via saponaro,24 milano ,itlay</div>
+                                    <div>Mobile no : +39 351290000</div>
+                                    <div>clinic no :+39020000000</div></p>
+                            </div>
+                        </Card></Col>
+                    <Col md={4}>
+                        <SocialCards />
+                    </Col>
+                </Row>
+            </Container>
 
-                                <a href="https://www.linkedin.com/in/fahad-zafar-81b001179/" target="_blank"><FaLinkedin /></a>
-                            </Card.Text>
-
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col md={6}>
-                    <img src="http://www.overplace.com/files/jumbotron/82060/jumbo_82060_201901091558027a2b9c808a2581006e9e9fecd1f3047f.jpg" alt="" width="725px" height="600" />
-                </Col>
-            </Row>
-
-        </Container>
+        </>
     )
 }
 export default Contacts

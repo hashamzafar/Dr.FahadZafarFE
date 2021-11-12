@@ -1,13 +1,15 @@
-
-
+import { Container } from 'react-bootstrap'
+import TreatmentCarousel from '../../Components/Carousel/Carousel'
 
 
 const Patients = () => {
     return (
         <>
+            {/* <Container> */}
+            {/* <TreatmentCarousel /> */}
             <h3>Patient details</h3>
             <h5>Case Details</h5>
-            <p>
+            <p class="mb-5">
                 Dental esthetics and oral health-related qualityof life in young adultsGerald I.
                 Isiekwe,aOyinkan O. Sofola,bOlanrewaju O. Onigbogi
                 cIfeoma L. Utomi,dOluwatosin O. Sanu,dand Oluranti O. daCostadIdi-araba,
@@ -43,6 +45,7 @@ const Patients = () => {
                 major limitation of this approach is thatit fails to take into account the way people reallyfeel and therefore does not correspond to broaderconcepts of health and needs.7To overcome this short-coming,
                 research has focused on developing broadersociodental concepts of oral health and as a resul
             </p>
+            {/* </Container> */}
         </>
     )
 }

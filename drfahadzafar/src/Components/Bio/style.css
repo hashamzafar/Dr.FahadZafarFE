@@ -1,8 +1,36 @@
 .profile {
-	/* border-top: 5px solid black; */
 	border-radius: 50%;
+	width: 60%;
+	height: 70%;
+	margin-top: 20px;
 }
-.backg {
-	background-size: 200px 100px 150px 100px;
-	height: 100% 50%;
+
+.patterns {
+	height: 20vh;
+}
+
+svg text {
+	font-family: Lora;
+	letter-spacing: 10px;
+	stroke: #333;
+	font-size: 150px;
+	font-weight: 500;
+	stroke-width: 3;
+
+	animation: textAnimate 5s infinite alternate;
+}
+
+@keyframes textAnimate {
+	0% {
+		stroke-dasharray: 0 50%;
+		stroke-dashoffset: 20%;
+		/* fill: hsl(189, 68%, 75%); */
+		fill: #444;
+	}
+
+	100% {
+		stroke-dasharray: 50% 0;
+		stroke-dashoffstet: -20%;
+		fill: hsla(189, 68%, 75%, 0%);
+	}
 }
