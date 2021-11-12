@@ -7,17 +7,9 @@ import axios from 'axios'
 
 const PostForm = (props) => {
 
-
-
-
-    const [fileInputState, setFileInputState] = useState("");
-    const [selectedFile, setSelectedFile] = useState("");
     const [previewSource, setPreviewSource] = useState();
 
-    const handleFileInputChange = (e) => {
-        const file = e.target.files[0];
-        previewFile(file)
-    };
+
 
     const previewFile = (file) => {
 
@@ -28,59 +20,48 @@ const PostForm = (props) => {
         }
 
     }
-    const handleSubmitFile = (e) => {
-        e.preventDefault()
-        if (!previewSource) return
-        uploadImage(previewSource)
-        console.log("submitted")
-    }
-    const uploadImage = async (base64EncodedImage) => {
-        console.log(base64EncodedImage)
-        try {
-            await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint, {
-                method: "POST",
-                body: JSON.stringify({ image: base64EncodedImage }),
-                headers: { "Content-type": "application/json" }
-            })
-
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
 
     const { endpoint } = props
     const [perio, setPerio] = useState({
         title: "",
         description: "",
-        image: "",
+        image: ""
+
     });
 
+    const handleSubmitFile = (e) => {
+        e.preventDefault()
+        if (!previewSource) return
+        handleSubmitFile(previewSource)
+        console.log("submitted")
+    }
+    const formData = new FormData();
+    const onFileChange = (e) => {
+        console.log(e.target.files[0])
 
+        if (e.target && e.target.files[0]) {
+            formData.append('image', e.target.files[0])
+            setPerio(e.target.files[0])
+            previewFile(e.target.files[0])
+        } else {
+            console.log("image upload not succeded")
+        }
 
-
+    }
     const handleSubmit = async () => {
         try {
 
-            const response = await axios.post(`${process.env.REACT_APP_API_PERIO}` + endpoint, perio)
+            const response = await axios.post(`${process.env.REACT_APP_API_PERIO}` + endpoint, perio, { formData })
             console.log(response, 'check api with axios')
 
             console.log("submitted 2")
 
         } catch (error) { }
     }
+
     const Inputhandler = (e) => {
         setPerio({ ...perio, [e.target.name]: e.target.value });
     }
-    console.log(perio, "sadsdasjdhkasjd")
-
-
-    // const uploadImage = (file) => {
-    //     const formData = new FormData()
-    //     formData.append("file", file[0])
-    // }
-
-
 
     return props.trigger ? (
         <Container>
@@ -111,8 +92,9 @@ const PostForm = (props) => {
                         id="exampleFormControlFile1"
                         type="file"
                         name="image"
-                        onChange={handleFileInputChange}
-                        value={fileInputState}
+                        onChange={onFileChange}
+                    // value="image"
+                    // value={fileInputState}
                     />
                     {/* <input type="file"
                         id="exampleFormControlFile1"
@@ -123,7 +105,7 @@ const PostForm = (props) => {
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit" className="mx-5">
+                <Button variant="primary" type="submit" className="mx-5" >
                     Submit
                 </Button>
                 <Button

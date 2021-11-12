@@ -195,8 +195,8 @@ const AdminPerio = () => {
                 </tbody>
             </Table>
 
-            {/* <PostForm trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm> */}
-            <PostModel trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostModel>
+            <PostForm trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm>
+            {/* <PostModel trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostModel> */}
 
             <EditForm trigger={editForm} setTrigger={setEditForm} endpoint={endpoint} id={perio._id} />
 
