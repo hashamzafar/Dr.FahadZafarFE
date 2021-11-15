@@ -55,7 +55,7 @@ const PostForm = (props) => {
         try {
 
             const response = await axios.post(`${process.env.REACT_APP_API_PERIO}${endpoint}`, formData, {
-                // headers: { 'Content-Type': 'application/json' }
+                // headers: { 'Content-Type': ' multipart/formdata' }
             })
             console.log(response, 'check api with axios')
 
