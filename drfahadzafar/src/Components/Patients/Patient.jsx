@@ -9,7 +9,7 @@ const Patients = () => {
             {/* <TreatmentCarousel /> */}
             <h3>Patient details</h3>
             <h5>Case Details</h5>
-            <p class="mb-5">
+            <p className="mb-5">
                 Dental esthetics and oral health-related qualityof life in young adultsGerald I.
                 Isiekwe,aOyinkan O. Sofola,bOlanrewaju O. Onigbogi
                 cIfeoma L. Utomi,dOluwatosin O. Sanu,dand Oluranti O. daCostadIdi-araba,

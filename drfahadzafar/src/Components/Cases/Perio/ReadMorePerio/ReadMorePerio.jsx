@@ -3,10 +3,12 @@ import axios from "axios"
 
 const ReadMore = (props) => {
     const [perio, setPerio] = useState([]);
+
     const [endpoint, setEndpoint] = useState("/crown");
+    const endpoints = props.match.params.endpoint
     const getPeiro = async () => {
         try {
-            const data = await axios.get(`${process.env.REACT_APP_API_PERIO}${endpoint} ` + "/" + props.id)
+            const data = await axios.get(`${process.env.REACT_APP_API_PERIO}/${endpoints}/${props.match.params.id}`)
 
             console.log("data:", data);
             // const response = await data.json();
@@ -16,7 +18,7 @@ const ReadMore = (props) => {
     }
     useEffect(async () => {
         getPeiro()
-    }, [endpoint]);
+    }, [endpoints]);
     const changeEndpoint = (e) => {
         e.preventDefault();
         const endpoint = e.target.value;

@@ -3,11 +3,11 @@ import { Card, Button, Col, Row, Container } from "react-bootstrap"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { FaTooth } from "react-icons/fa";
-import ReadMore from "./ReadMore/ReadMore"
+import ReadMore from "./ReadMorePerio/ReadMorePerio"
 import { Route } from "react-router-dom"
 import "../../MainCard/mainCard.scss"
-
-const PerioCases = () => {
+import { withRouter } from "react-router-dom";
+const PerioCases = ({ history }) => {
     const [perio, setPerio] = useState([]);
     const [endpoint, setEndpoint] = useState("/crown");
     const getPeiro = async () => {
@@ -118,24 +118,28 @@ const PerioCases = () => {
             <Container >
                 <Row>
                     {perio.map((perioData, i) =>
-
-                        <Col>
-                            <div className="cards ">
-                                <div className="face face1">
-                                    <div className="content">
-                                        <img src={perioData.image} />
-                                        <h3>{perioData.title}</h3>
+                        <>
+                            <Col sm={12} md={6} lg={4}>
+                                <div className="cards ">
+                                    <div className="face face1">
+                                        <div className="content">
+                                            <img src={perioData.image} />
+                                            <h3>{perioData.title}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="face face2">
+                                        <div className="content">
+                                            <p>{perioData.description}</p>
+                                            {/* <a href="/read">Read More</a> */}
+                                            <Button variant="info" onClick={() => history.push("/read" + endpoint + "/" + perioData._id)}>read more</Button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="face face2">
-                                    <div className="content">
-                                        <p>{perioData.description}.</p>
-                                        <a href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
 
+                            </Col>
+
+
+                        </>
                     )
                     }
 

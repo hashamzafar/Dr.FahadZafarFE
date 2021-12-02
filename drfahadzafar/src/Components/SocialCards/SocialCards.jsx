@@ -3,11 +3,11 @@ import { Container, Col, Row } from "react-bootstrap"
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa"
 const SocialCards = () => {
     return (
-        <Container>
-
-            <Row>
-                <Col md={4}>
-                    <div className="cards">
+        // <Container>
+        <div>
+            <Row className="d-flex justify-space-between">
+                <Col md={12} lg={6} >
+                    <div className="cards mx-5">
                         <div className="face face1 bg-info">
                             <div className="content">
                                 <FaFacebookF className="social fb" style={{ color: "white" }} />
@@ -21,8 +21,8 @@ const SocialCards = () => {
                             </div>
                         </div>
                     </div></Col>
-                <Col md={4} >
-                    <div class="cards">
+                <Col md={12} lg={6} >
+                    <div class="cards mx-5">
                         <div className="face face1 bg-primary">
                             <div className="content">
                                 <FaLinkedin className="social" />
@@ -37,7 +37,7 @@ const SocialCards = () => {
                         </div>
                     </div></Col>
                 <Col md={6}>
-                    <div class="cards">
+                    <div class="cards mx-5">
                         <div className="face face1 bg-danger">
                             <div className="content">
                                 <FaInstagram className="social ins" />
@@ -52,8 +52,8 @@ const SocialCards = () => {
                         </div>
                     </div>
                 </Col>
-            </Row>
-        </Container>
+            </Row></div>
+        // {/* </Container > */ }
     )
 }
 

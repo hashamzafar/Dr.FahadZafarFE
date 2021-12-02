@@ -1,7 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap";
-import "./PostForm.css";
+// import "./PostForm.css";
 import { useEffect, useState } from "react"
-import axios from 'axios'
+
 
 
 
@@ -9,7 +9,7 @@ const PostForm = (props) => {
 
     const [previewSource, setPreviewSource] = useState();
 
-
+    const [file, setFile] = useState()
 
     const previewFile = (file) => {
 
@@ -18,16 +18,14 @@ const PostForm = (props) => {
         reader.onloadend = () => {
             setPreviewSource(reader.result)
         }
-
     }
 
     const { endpoint } = props
     const [perio, setPerio] = useState({
         title: "",
         description: "",
-        image: ""
-
     });
+
 
     const handleSubmitFile = (e) => {
         e.preventDefault()
@@ -41,39 +39,50 @@ const PostForm = (props) => {
 
         if (e.target && e.target.files[0]) {
             formData.append('image', e.target.files[0])
-            // setPerio({ ...perio, image: e.target.files[0] })
+            setFile(formData)
             previewFile(e.target.files[0])
         } else {
             console.log("image upload not succeded")
         }
 
     }
-    const handleSubmit = async () => {
-        // e.preventDefault()
-        formData.append("title", perio.title)
-        formData.append("description", perio.description)
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        console.log(file);
         try {
-
-            const response = await axios.post(`${process.env.REACT_APP_API_PERIO}${endpoint}`, formData, {
-                // headers: { 'Content-Type': ' multipart/formdata' }
+            const res = await fetch(`${process.env.REACT_APP_API_IMPLANT}${endpoint}`, {
+                method: "POST",
+                body: JSON.stringify(perio),
+                headers: { 'Content-Type': 'application/json' }
             })
+            let { _id } = await res.json()
+            console.log(_id);
+            const response = await fetch(`${process.env.REACT_APP_API_IMPLANT}${endpoint}/${_id}/img`, {
+                method: 'POST',
+
+                body: file
+            })
+
             console.log(response, 'check api with axios')
 
             console.log("submitted 2")
 
-        } catch (error) { }
+            // here we should refetch the list
+            // and close the modal
+            props.getImplant()
+            props.setTrigger(false)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const Inputhandler = (e) => {
         setPerio({ ...perio, [e.target.name]: e.target.value });
-        // setPerio({ ...perio, image: e.target.files[0] })
     }
 
     return props.trigger ? (
         <Container>
             <Form className="popup" onSubmit={handleSubmit}>
-
-
                 <Form.Group controlId="formBasicEmail" className="mx-5 title">
                     <Form.Label>Title</Form.Label>
                     <Form.Control type="text" name="title" onChange={(e) => Inputhandler(e)} placeholder="Title" />
@@ -98,16 +107,7 @@ const PostForm = (props) => {
                         id="exampleFormControlFile1"
                         type="file"
                         name="image"
-                        onChange={onFileChange}
-                    // value="image"
-                    // value={fileInputState}
-                    />
-                    {/* <input type="file"
-                        id="exampleFormControlFile1"
-                        name="image"
-                        onChange={(event) => { uploadImage(event.target.file) }}
-                        value={handleFileInputChange} /> */}
-
+                        onChange={onFileChange} />
                 </Form.Group>
 
 

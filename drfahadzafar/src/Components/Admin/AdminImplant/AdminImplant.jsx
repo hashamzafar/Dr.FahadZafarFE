@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap"
 import { FaTooth } from "react-icons/fa"
+import { axios } from "axios"
+import PostForm from "./PostForm/PostForm"
 
 const AdminImplant = () => {
     const [implant, setImplant] = useState([])
     const [endpoint, setEndpoint] = useState("/esthetic")
+    const [postForm, setPostForm] = useState(false)
+
     useEffect(async () => {
+        getImplant()
+    }, [endpoint]);
+
+    const getImplant = async () => {
         try {
             const data = await fetch(process.env.REACT_APP_API_IMPLANT + endpoint, {
                 method: "GET",
@@ -23,7 +31,7 @@ const AdminImplant = () => {
 
         }
 
-    }, [endpoint])
+    }
 
     const changeEndpoint = (e) => {
         e.preventDefault()
@@ -31,6 +39,25 @@ const AdminImplant = () => {
         console.log(endpoint)
         setEndpoint(endpoint)
     }
+    const deleteItem = async (_id) => {
+        // e.preventDefault();
+        // const id = e.target.value;
+        // console.log(id)
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_IMPLANT}${endpoint}/${_id}`, {
+                method: 'DELETE'
+            })
+            if (response) {
+                console.log('delete success')
+                getImplant()
+            }
+
+
+        } catch (error) {
+
+            console.error("There was an error!", error);
+        }
+    };
 
     return (
         <div>
@@ -66,7 +93,11 @@ const AdminImplant = () => {
                             <td>{implantData.description}</td>
                             <td><img src={implantData.image} alt="" width="30%" height="30px" /></td>
                             <td>
-                                <Button variant="danger" className="mx-3"><FaTooth /></Button>
+                                <Button key={i}
+                                    variant="danger"
+                                    className="mx-3"
+                                    value={implantData._id}
+                                    onClick={() => deleteItem(implantData._id)} ><FaTooth /></Button>
                                 <Button variant="secondary"  > Edit</Button>
 
                             </td>
@@ -77,10 +108,13 @@ const AdminImplant = () => {
                     <tr>
                         <td>Total Cases</td>
                         <td colSpan="2">50</td>
-                        <td><Button variant="success"> Add more</Button></td>
+                        <td> <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button>
+                        </td>
                     </tr>
                 </tbody>
             </Table>
+
+            <PostForm trigger={postForm} getImplant={getImplant} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm>
         </div>
     )
 

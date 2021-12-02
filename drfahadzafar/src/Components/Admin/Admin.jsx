@@ -14,10 +14,7 @@ const Admin = () => {
             <>
                 <Button variant="" className="btn-large" onClick={() => history.push("/admin/perio")}> <div><FaTooth /></div> Perio </Button>{' '}
                 <Button variant="" onClick={() => history.push("/admin/implant")} > <div><FaTooth /></div>Implants</Button>{' '}
-                <Button variant="">Success</Button>{' '}
-                <Button variant="">Warning</Button>{' '}
-                <Button variant="">Danger</Button> <Button variant="info">Info</Button>{' '}
-                <Button variant="">Light</Button> <Button variant="dark">Dark</Button>{' '}
+
                 <Button variant="">Link</Button>
             </>
         </div >

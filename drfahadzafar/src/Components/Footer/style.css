@@ -1,7 +1,7 @@
 .pageFooter {
-	padding: 10px;
+	padding: 20px;
 	width: 100%;
 	/* position: fixed-bottom; */
-
+	/* margin-top: 100px; */
 	background: rgba(0, 0, 0, 0.2);
 }

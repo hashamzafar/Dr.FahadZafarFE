@@ -1,14 +1,24 @@
 .card-background {
 	background-image: url(http://www.unifad.info/wp-content/uploads/2019/11/160-1600491_autodesk-wallpaper-website-background.jpg);
 	width: 100%;
-	height: 500px;
+	// height: 100vh;
+	min-width: 100%;
 	// opacity: 0.4;
 	background-size: cover;
-	// margin-top: 70px;
+	margin-top: 50px;
 	// margin-bottom: 200px;
 }
-
-.container {
+// @media screen and (max-width: 375px) {
+// 	.card-background {
+// 		hieght: 100vh;
+// 	}
+// }
+// @media screen and (min-width: 976px) {
+// 	.card-background {
+// 		hieght: 60vh;
+// 	}
+// }
+.containe {
 	width: 1000px;
 	position: relative;
 	display: flex;
@@ -19,6 +29,7 @@
 .container .cards {
 	position: relative;
 	cursor: pointer;
+	margin-left: 20px;
 }
 
 .container .cards .face {

@@ -1,23 +1,36 @@
 .profile {
-	border-radius: 50%;
-	width: 60%;
-	height: 70%;
-	margin-top: 20px;
+	border-radius: 50vh;
+	width: 400px;
+	/* height: 500px; */
+	/* margin-top: 20px; */
+	margin-bottom: 30px;
+	border-radius: 15px;
 }
-
 .patterns {
 	height: 20vh;
 }
 
 svg text {
 	font-family: Lora;
-	letter-spacing: 10px;
+	letter-spacing: 7px;
 	stroke: #333;
-	font-size: 150px;
+	font-size: 10vh;
 	font-weight: 500;
 	stroke-width: 3;
-
+	/* font-size: 15vw; */
 	animation: textAnimate 5s infinite alternate;
+}
+@media screen and (max-width: 1366px) {
+	svg text {
+		font-size: 40px;
+		font-weight: 300;
+	}
+}
+@media screen and (min-width: 1300px) {
+	svg text {
+		font-size: 80px;
+		font-weight: 400;
+	}
 }
 
 @keyframes textAnimate {

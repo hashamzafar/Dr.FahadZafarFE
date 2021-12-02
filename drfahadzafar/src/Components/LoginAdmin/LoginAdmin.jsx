@@ -13,7 +13,7 @@ const Login = () => (
 
         }}
     >
-        <Container className="login">
+        <Container className="login d-flex justify-content-center">
             <Form id="">
                 <img src="../../img/logo2.png" className="logo mb-4" alt="" />
                 <h3 id="title">Admin Only</h3>

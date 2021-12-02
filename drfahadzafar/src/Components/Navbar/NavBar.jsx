@@ -8,16 +8,15 @@ const NavBar = () => {
 
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="" variant="" id="navbar" >
+        <Navbar collapseOnSelect expand="lg" bg="" variant="light" id="navbar">
 
             <Navbar.Brand href="/home" className="brand" >
-                {/* <img src="../../img/namelogo.png" alt="" width="100px" height="50" /> */}
-                {/* fz.perio */}
+
                 <div class="sign">
                     <span className="fast-flicker"> </span>FZ<span className="flicker">.</span>Perio
                 </div>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className="" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto ml-auto">
                     <Nav.Link href="/home" className="mx-4" id="navbar"><FaHome /> Home</Nav.Link>
