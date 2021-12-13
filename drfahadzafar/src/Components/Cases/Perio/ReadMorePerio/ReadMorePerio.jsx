@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import { Container, Row } from "react-bootstrap"
+import "./style.css"
 const ReadMore = (props) => {
     const [perio, setPerio] = useState([]);
 
@@ -26,12 +27,17 @@ const ReadMore = (props) => {
         setEndpoint(endpoint);
     };
     return (
-        <>
-            <img src={perio.image} alt="" />
-            <h1>{perio.title}</h1>
-            <p>{perio.description}</p>
+        <div className="">
+            {/* // <Row> */}
+            <img src={perio.image} alt="" className="img" />
 
-        </>
+            <h1>{perio.title}</h1>
+            <Container>
+
+
+                <p>{perio.description}</p></Container>
+            {/* // </Row> */}
+        </div>
     )
 }
 export default ReadMore

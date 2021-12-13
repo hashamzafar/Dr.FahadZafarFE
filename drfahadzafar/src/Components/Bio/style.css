@@ -1,9 +1,9 @@
 .profile {
 	border-radius: 50vh;
-	width: 400px;
+	width: 30vw;
 	/* height: 500px; */
 	/* margin-top: 20px; */
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 	border-radius: 15px;
 }
 .patterns {
@@ -13,7 +13,7 @@
 svg text {
 	font-family: Lora;
 	letter-spacing: 7px;
-	stroke: #333;
+	stroke: #30789f;
 	font-size: 10vh;
 	font-weight: 500;
 	stroke-width: 3;
@@ -38,7 +38,7 @@ svg text {
 		stroke-dasharray: 0 50%;
 		stroke-dashoffset: 20%;
 		/* fill: hsl(189, 68%, 75%); */
-		fill: #444;
+		fill: #333;
 	}
 
 	100% {

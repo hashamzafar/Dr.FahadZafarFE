@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import { Container } from "react-bootstrap"
 const ReadMoreImplant = (props) => {
     const [implant, setImplant] = useState([]);
 
@@ -26,12 +26,13 @@ const ReadMoreImplant = (props) => {
         setEndpoint(endpoint);
     };
     return (
-        <>
+        <div className="">
             <img src={implant.image} alt="" />
             <h1>{implant.title}</h1>
-            <p>{implant.description}</p>
-
-        </>
+            <Container>
+                <p>{implant.description}</p>
+            </Container>
+        </div>
     )
 }
 export default ReadMoreImplant

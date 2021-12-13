@@ -1,12 +1,12 @@
 .BT {
-	color: white;
+	/* color: white; */
 }
 .BT:hover {
 	background-color: #30789f;
 }
 .bg {
 	background-color: #333;
-	height: 35vh;
+	height: 40vh;
 }
 .cardBg {
 	/* background-image: url(http://www.unifad.info/wp-content/uploads/2019/11/160-1600491_autodesk-wallpaper-website-background.jpg); */

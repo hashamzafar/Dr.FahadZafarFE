@@ -26,10 +26,10 @@ function App() {
 
       <NavBar />
       <Router>
-        <Route exact path="/home" render={(routerProps) => <PageHeader />} />
+        <Route exact path="/" render={(routerProps) => <PageHeader />} />
         {/* <Route exact path="/home" render={(routerProps) => <ArtEduMain />} /> */}
-        <Route exact path="/home" render={(routerProps) => <Bio />} />
-        <Route exact path="/home" render={(routerProps) => <MainCard />} />
+        <Route exact path="/" render={(routerProps) => <Bio />} />
+        <Route exact path="/" render={(routerProps) => <MainCard />} />
 
 
         {/* <Route exact path="/home" render={(routerProps) => <TreatmentCarousel />} /> */}
@@ -37,7 +37,7 @@ function App() {
         <Route exact path="/contacts" render={(routerProps) => <Contacts />} />
         <Route exact path="/healthprofessional" render={(routerProps) => <UpComing />} />
         <Route exact path="/patients" render={(routerProps) => <Patients />} />
-        <Route exact path="/login" render={(routerProps) => <Login />} />
+        <Route exact path="/login" render={(routerProps) => <Login {...routerProps} />} />
         <Route exact path="/perio" render={(routerProps) => <PerioCases {...routerProps} />} />
         <Route exact path="/implant" render={(routerProps) => <ImplantCases {...routerProps} />} />
         {/* make these route private */}

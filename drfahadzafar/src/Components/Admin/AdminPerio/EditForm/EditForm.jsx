@@ -16,7 +16,7 @@ const EditForm = (props) => {
     // console.log(cases.title, cases.description, cases.image, cases.id)
 
     const [perio, setPerio] = useState({});
-
+    const [file, setFile] = useState()
     const getPerio = async () => {
         try {
             const data = await axios.get(`${process.env.REACT_APP_API_PERIO}/${props.match.params.endpoint}/${props.match.params.id}`)
@@ -44,6 +44,11 @@ const EditForm = (props) => {
                 props.history.push("/admin/perio")
                 console.log(cases)
             }
+            const res = await fetch(`${process.env.REACT_APP_API_PERIO}${props.match.params.endpoint}/${props.match.params.id}/img`, {
+                method: 'POST',
+
+                body: file
+            });
         } catch (error) { }
     };
 
@@ -90,8 +95,8 @@ const EditForm = (props) => {
                         id="exampleFormControlFile1"
                         label="Image"
                         name="image"
-                    // onchange={(e) => setCases({ ...cases, image: e.target.value })}
-                    // value={cases.image}
+                    // onchange={(e) => setPerio({ ...perio, image: e.target.value })}
+                    // value={perio.image}
                     />
                     {/* {previewSource && (
                         <img src={previewSource} alt="chosen" height="300px" />
