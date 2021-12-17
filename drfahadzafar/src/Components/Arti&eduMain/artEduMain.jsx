@@ -1,12 +1,12 @@
 import { Row, Col, } from "react-bootstrap"
 import "./style.css"
-import Carousel from "../Carousel/Carousel"
+import CarouselArtiEdu from "../Carousel/CarouselArtiEdu"
 
 const ArtEduMain = () => {
     return (
         <Row className=' text-color' >
             <Col md={4} height="700px" >
-                <div className='bg-dark pt-3 eduCard text-color'>
+                <div className='bg-dark  eduCard text-color'>
 
 
 
@@ -18,14 +18,14 @@ const ArtEduMain = () => {
                     </div>
 
                     <div className="frontimage">
-                        <img src="../../img/artAndEdu.jpeg" alt="" height="500" width="800" />
+                        {/* <img src="../../img/artAndEdu.jpeg" alt="" width="1400" height="500" /> */}
                     </div>
                 </div >
             </Col>
 
 
             <Col md={8} >
-                <Carousel />
+                {/* <CarouselArtiEdu className="carousel" /> */}
             </Col>
         </Row>
 

@@ -1,25 +1,27 @@
 #login {
-	margin-top: 50px;
+	/* margin-top: 50px; */
 }
-.link {
+/* .link {
 	color: #fff;
-}
-#title {
+} */
+/* #title {
 	font-family: Georgia, "Times New Roman", Times, serif;
-}
-* {
+} */
+/* * {
 	font-family: serif;
 	font-size: 18px;
-}
+} */
 
-.link:hover {
+/* .link:hover {
 	color: #fff;
-}
+} */
 .login {
 	border: 2px solid lightgrey;
-	margin-top: 50px;
+	/* margin-top: 50px; */
 	margin-bottom: 180px;
 	border-radius: 15px;
 }
-#btn {
+#container {
+	margin-bottom: 3em;
+	margin-top: 3em;
 }

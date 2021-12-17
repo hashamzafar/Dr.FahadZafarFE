@@ -1,0 +1,29 @@
+.BT {
+	/* color: white; */
+}
+.readMore:hover {
+	background-color: #5d6468;
+}
+.bg {
+	background-color: #333;
+	height: 40vh;
+}
+.cardBg {
+	/* background-image: url(http://www.unifad.info/wp-content/uploads/2019/11/160-1600491_autodesk-wallpaper-website-background.jpg); */
+	/* width: 100%; */
+	/* height: 500px; */
+	/* min-width: 100%; */
+	/* // opacity: 0.4; */
+	/* background-size: cover; */
+	/* margin-top: 50px; */
+	/* // margin-bottom: 200px; */
+	/* padding-top: 50px;
+	padding-bottom: 50px; */
+	/* z-index: 2; */
+	background: linear-gradient(white, #5d6468);
+}
+.readMore {
+	height: 5vh;
+	width: 10vh;
+	margin: 5px;
+}

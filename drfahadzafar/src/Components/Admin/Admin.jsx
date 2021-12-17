@@ -12,13 +12,96 @@ const Admin = () => {
 
 
             <>
-                <Button variant="primary" className="btn-large" onClick={() => history.push("/admin/perio")}> <div><FaTooth /></div> Perio </Button>{' '}
-                <Button variant="secondary" onClick={() => history.push("/admin/implant")} > <div><FaTooth /></div>Implants</Button>{' '}
-                <Button variant="success">Success</Button>{' '}
-                <Button variant="warning">Warning</Button>{' '}
-                <Button variant="danger">Danger</Button> <Button variant="info">Info</Button>{' '}
-                <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
-                <Button variant="link">Link</Button>
+                {/* <Button variant="" className="btn-large" onClick={() => history.push("/admin/perio")}> <div><FaTooth /></div> Perio </Button>{' '}
+                <Button variant="" onClick={() => history.push("/admin/implant")} > <div><FaTooth /></div>Implants</Button>{' '}
+
+                <Button variant="">Link</Button> */}
+                <div className="my-5">
+
+
+
+
+
+
+                    <div id="container">
+
+                        <div className="product-details mx-5">
+
+                            <h1 className="d-flex justify-content-center">Perio Cases</h1>
+
+                            <p className="information">Perio Cases Explination</p>
+
+                        </div>
+
+                        <div className="product-image">
+
+                            <img src="http://didimdental.co.uk/wp-content/uploads/2017/12/periodontology-didim-dental-768x511.jpg" alt="" className="mt-5" />
+
+
+                            <div className="info">
+                                <h2> Perio Cases</h2>
+                                {/* <p className="ml-2">id :{perioData._id}</p> */}
+
+                                <button className="btn" onClick={() => history.push("/admin/perio")} >
+                                    <span className="todo">See More About Perio</span>
+
+                                    <span className="function">See All Articles</span>
+                                </button>
+                                {/* <div>
+                                    <button className="btn delete mt-3" onClick={() => history.push("/admin/implant")} >
+                                        <span className="todo">to remove</span>
+
+                                        <span className="function">Delete</span>
+                                    </button></div> */}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div className="my-5">
+
+
+
+
+
+
+                    <div id="container">
+
+                        <div className="product-details mx-5">
+
+                            <h1 className="d-flex justify-content-center">Implant Cases</h1>
+
+                            <p className="information">Implant Cases Explination</p>
+
+                        </div>
+
+                        <div className="product-image">
+
+                            <img src="https://mlsw.com/wp-content/uploads/2020/08/Chirurgia-guidata-implantologia.jpg" alt="" className="mt-5" />
+
+
+                            <div className="info">
+                                <h2> Perio Cases</h2>
+                                {/* <p className="ml-2">id :{perioData._id}</p> */}
+
+                                <button className="btn" onClick={() => history.push("/admin/implant")} >
+                                    <span className="todo">See More About Implant</span>
+
+                                    <span className="function">See All Articles</span>
+                                </button>
+                                {/* <div>
+                <button className="btn delete mt-3" onClick={() => history.push("/admin/implant")} >
+                    <span className="todo">to remove</span>
+
+                    <span className="function">Delete</span>
+                </button></div> */}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </>
         </div >
     )

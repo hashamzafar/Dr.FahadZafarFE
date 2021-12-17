@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap"
 import { FaTooth } from "react-icons/fa"
-
-const AdminImplant = () => {
+import { axios } from "axios"
+import PostForm from "./PostForm/PostForm"
+import { RiArrowGoBackFill } from "react-icons/ri"
+const AdminImplant = ({ history }) => {
     const [implant, setImplant] = useState([])
     const [endpoint, setEndpoint] = useState("/esthetic")
+    const [postForm, setPostForm] = useState(false)
+
     useEffect(async () => {
+        getImplant()
+    }, [endpoint]);
+
+    const getImplant = async () => {
         try {
             const data = await fetch(process.env.REACT_APP_API_IMPLANT + endpoint, {
                 method: "GET",
@@ -23,7 +31,7 @@ const AdminImplant = () => {
 
         }
 
-    }, [endpoint])
+    }
 
     const changeEndpoint = (e) => {
         e.preventDefault()
@@ -31,22 +39,44 @@ const AdminImplant = () => {
         console.log(endpoint)
         setEndpoint(endpoint)
     }
+    const deleteItem = async (_id) => {
+        // e.preventDefault();
+        // const id = e.target.value;
+        // console.log(id)
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_IMPLANT}${endpoint}/${_id}`, {
+                method: 'DELETE'
+            })
+            if (response) {
+                console.log('delete success')
+                getImplant()
+            }
+
+
+        } catch (error) {
+
+            console.error("There was an error!", error);
+        }
+    };
 
     return (
         <div>
             <img src="../../../img/logo2.png" className="logo mb-4" alt="" width="200" height="200" />
             <div className="mb-4">
-                <Button variant="primary" className="btn-large" value="/esthetic" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div> Esthetic Problems Implants </Button>{' '}
-                <Button variant="secondary" value="/guidedbone" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Guided Bone Regeneration</Button>{' '}
-                <Button variant="success" value="/Implantsurgery" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Implant Surgery</Button>{' '}
-                <Button variant="warning" value="/peri" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Peri Implantitis Treatment</Button>{' '}
-                <Button variant="danger" value="/sinus" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Sinus Lift Procedure</Button>
-                <Button variant="info" value="" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Periodontal Regenerative Surgery</Button>{' '}
+                <Button variant="" className="navlink mx-3" value="/esthetic" onClick={e => changeEndpoint(e)}>  Esthetic Problems Implants </Button>{' '}
+                <Button variant="" className="navlink mx-3" value="/guidedbone" onClick={e => changeEndpoint(e)}> Guided Bone Regeneration</Button>{' '}
+                <Button variant="" className="navlink mx-3" value="/implantsurgery" onClick={e => changeEndpoint(e)}> Implant Surgery</Button>{' '}
+                <Button variant="" className="navlink mx-3" value="/peri" onClick={e => changeEndpoint(e)}>Peri Implantitis Treatment</Button>{' '}
+                <Button variant="" className="navlink mx-3" value="/sinus" onClick={e => changeEndpoint(e)}>Sinus Lift Procedure</Button>
+                <Button variant="" href="/admin" className="navlink mx-3">
+                    <RiArrowGoBackFill />
+                    Go Back
+                </Button>
 
-                <Button variant="dark" value="/pocketelimination" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Pocket Elimination Surgery</Button>{' '}
-                <Button variant="link"><div><FaTooth /></div>Link</Button>
+
+
             </div>
-            <Table striped bordered hover>
+            {/* <Table striped bordered hover>
 
 
 
@@ -59,28 +89,78 @@ const AdminImplant = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {implant.map((implantData) => (
+                    
                         <tr>
-                            <td>{implantData._id}</td>
+                            <td key={i}>{implantData._id}</td>
                             <td>{implantData.title}</td>
                             <td>{implantData.description}</td>
                             <td><img src={implantData.image} alt="" width="30%" height="30px" /></td>
                             <td>
-                                <Button variant="danger" className="mx-3"><FaTooth /></Button>
+                                <Button key={i}
+                                    variant="danger"
+                                    className="mx-3"
+                                    value={implantData._id}
+                                    onClick={() => deleteItem(implantData._id)} ><FaTooth /></Button>
                                 <Button variant="secondary"  > Edit</Button>
 
                             </td>
                         </tr>
-                    ))}
+                    
 
 
                     <tr>
                         <td>Total Cases</td>
                         <td colSpan="2">50</td>
-                        <td><Button variant="success"> Add more</Button></td>
+                        <td> <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button>
+                        </td>
                     </tr>
                 </tbody>
-            </Table>
+            </Table> */}
+            {implant.map((implantData, i) => (<div className="my-5">
+
+
+
+
+
+
+                <div id="container">
+
+                    <div className="product-details mx-5">
+
+                        <h1 className="d-flex justify-content-center">{implantData.title}</h1>
+
+                        <p className="information">{implantData.description}</p>
+
+                    </div>
+
+                    <div className="product-image">
+
+                        <img src={implantData.image} alt="" className="mt-5" />
+
+
+                        <div className="info">
+                            <h2> {implantData.title}</h2>
+                            <p className="ml-2">id :{implantData._id}</p>
+
+                            <button className="btn" onClick={() => { history.push("/edit/implant" + endpoint + "/" + implantData._id) }}>
+                                <span className="todo">to edit</span>
+
+                                <span className="function">Edit</span>
+                            </button>
+                            <div>
+                                <button className="btn delete mt-3" value={implantData._id} onClick={() => deleteItem(implantData._id)} >
+                                    <span className="todo">to remove</span>
+
+                                    <span className="function">Delete</span>
+                                </button></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>))}
+
+            <PostForm trigger={postForm} getImplant={getImplant} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm>
         </div>
     )
 

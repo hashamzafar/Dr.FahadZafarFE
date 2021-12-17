@@ -1,6 +1,6 @@
 
-import { Navbar, Nav, Dropdown } from "react-bootstrap"
-import "./style.css"
+import { Navbar, Nav } from "react-bootstrap"
+import "./navbar.scss"
 import { FaTooth, FaHome, FaLock } from "react-icons/fa"
 import { MdHealing, MdContactMail } from "react-icons/md"
 import { GiHealing } from "react-icons/gi"
@@ -8,63 +8,43 @@ const NavBar = () => {
 
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" id="navbar" >
-            {/* <Container> */}
-            <Navbar.Brand href="/home" className="brand" >
-                <img src="../../img/namelogo.png" alt="" width="200px" height="50" />
-                {/* fz.perio */}
+        <Navbar collapseOnSelect expand="lg" bg="trasperant" variant="light" id="navbar">
+
+            <Navbar.Brand href="/" className="brand" >
+
+                <div className="sign">
+                    <span className="fast-flicker"> </span>FZ<span className="flicker">.</span>Perio
+                </div>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className="" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto ml-auto">
-                    <Nav.Link href="/home" className="mx-4"><FaHome /> Home</Nav.Link>
-                    <Nav.Link href="/patients" className="mx-4"><GiHealing />   Patients</Nav.Link>
-                    <Nav.Link href="/healthprofessional" className="mx-4"> <MdHealing />  Health Professional</Nav.Link>
-                    <Dropdown>
-                        <Dropdown.Toggle variant="" id="dropdown-basic" className="mx-4">
-                            <FaTooth /> Cases
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="" id="dropdown-basic">
-                                    Perio
-                                </Dropdown.Toggle>
-
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Non Surgical Therapy</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Gum Plastic Surgery</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Crown Length Surgery</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-4">Periodontal Regenerative Surgery</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-5">Pocket Elimination/Osseous Resective Surgery</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-6">Impackted Canine Exposure</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-7">Frenulectomy</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="" id="dropdown-basic">
-                                    Implants Dentistry
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Implant Surgery</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Guided Bone Regeneration</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Esthetic Problems Around Implants</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-4">Peri Implantitis Treatment</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-5">Sinus Lift Procedure</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    <Nav.Link href="/contacts" className="mx-4"><MdContactMail />  Contacts</Nav.Link>
-                    <Nav.Link href="/login" className="mx-4">  <FaLock /></Nav.Link>
+                    <Nav.Link href="/" className="mx-2" id="navbar">
+                        {/* <FaHome />  */}
+                        Home</Nav.Link>
+                    <Nav.Link href="/patients" className="mx-2" id="navbar">
+                        {/* <GiHealing />    */}
+                        Patients</Nav.Link>
+                    <Nav.Link href="/healthprofessional" className="mx-2" id="navbar">
+                        {/* <MdHealing />  */}
+                        Health Professional</Nav.Link>
+                    <Nav.Link href="/perio" className="mx-2" id="navbar">
+                        {/* <FaTooth />   */}
+                        Perio Cases</Nav.Link>
+                    <Nav.Link href="/implant" className="mx-2" id="navbar">
+                        {/* <FaTooth />  */}
+                        Implant Cases</Nav.Link>
+                    <Nav.Link href="/contacts" className="mx-2" id="navbar">
+                        {/* <MdContactMail />  */}
+                        Contacts</Nav.Link>
+                    <Nav.Link href="/login" className="mx-2" id="navbar" onClick={() => window.localStorage.setItem("user_Token", " ")}>
+                        <FaLock />
+                    </Nav.Link>
                 </Nav>
 
             </Navbar.Collapse>
-            {/* </Container> */}
-        </Navbar>
+
+        </Navbar >
 
     )
 }

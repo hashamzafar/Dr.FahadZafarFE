@@ -1,20 +1,15 @@
 import { Form, Button, Container } from "react-bootstrap";
 import "./PostForm.css";
 import { useEffect, useState } from "react"
-import axios from 'axios'
+
 
 
 
 const PostForm = (props) => {
 
-    const [fileInputState, setFileInputState] = useState("");
-    const [selectedFile, setSelectedFile] = useState("");
     const [previewSource, setPreviewSource] = useState();
 
-    const handleFileInputChange = (e) => {
-        const file = e.target.files[0];
-        previewFile(file)
-    };
+    const [file, setFile] = useState()
 
     const previewFile = (file) => {
 
@@ -23,28 +18,7 @@ const PostForm = (props) => {
         reader.onloadend = () => {
             setPreviewSource(reader.result)
         }
-
     }
-    const handleSubmitFile = (e) => {
-        e.preventDefault()
-        if (!previewSource) return
-        uploadImage(previewSource)
-        console.log("submitted")
-    }
-    const uploadImage = async (base64EncodedImage) => {
-        console.log(base64EncodedImage)
-        try {
-            await fetch(`${process.env.REACT_APP_API_PERIO}` + endpoint, {
-                method: "POST",
-                body: JSON.stringify({ image: base64EncodedImage }),
-                headers: { "Content-type": "application/json" }
-            })
-
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
 
     const { endpoint } = props
     const [perio, setPerio] = useState({
@@ -53,28 +27,59 @@ const PostForm = (props) => {
     });
 
 
+    const handleSubmitFile = (e) => {
+        e.preventDefault()
+        if (!previewSource) return
+        handleSubmitFile(previewSource)
+        console.log("submitted")
+    }
+    const formData = new FormData();
+    const onFileChange = (e) => {
+        console.log(e.target.files[0])
 
+        if (e.target && e.target.files[0]) {
+            formData.append('image', e.target.files[0])
+            setFile(formData)
+            previewFile(e.target.files[0])
+        } else {
+            console.log("image upload not succeded")
+        }
 
-    const handleSubmit = async () => {
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        console.log(file);
         try {
+            const res = await fetch(`${process.env.REACT_APP_API_PERIO}${endpoint}`, {
+                method: "POST",
+                body: JSON.stringify(perio),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            let { _id } = await res.json()
+            console.log(_id);
+            const response = await fetch(`${process.env.REACT_APP_API_PERIO}${endpoint}/${_id}/img`, {
+                method: 'POST',
 
-            const response = await axios.post(`${process.env.REACT_APP_API_PERIO}` + endpoint, perio)
+                body: file
+            })
+
             console.log(response, 'check api with axios')
 
-            console.log("submitted2")
+            console.log("submitted 2")
+            props.getPerio()
+            props.setTrigger(false)
 
         } catch (error) { }
     }
+
     const Inputhandler = (e) => {
         setPerio({ ...perio, [e.target.name]: e.target.value });
     }
-    console.log(perio, "sadsdasjdhkasjd")
 
     return props.trigger ? (
-        <Form className="popup" onSubmit={handleSubmit, handleSubmitFile}>
-            <Container>
-
-                <Form.Group controlId="formBasicEmail" className="mx-5">
+        <Container>
+            <Form className="popup" onSubmit={handleSubmit}>
+                <Form.Group controlId="formBasicEmail" className="mx-5 title">
                     <Form.Label>Title</Form.Label>
                     <Form.Control type="text" name="title" onChange={(e) => Inputhandler(e)} placeholder="Title" />
                 </Form.Group>
@@ -87,7 +92,7 @@ const PostForm = (props) => {
 
                     <textarea
                         onChange={(e) => Inputhandler(e)}
-                        class="form-control"
+                        className="form-control"
                         id="exampleFormControlTextarea1"
                         name="description"
                         rows="10"
@@ -98,13 +103,11 @@ const PostForm = (props) => {
                         id="exampleFormControlFile1"
                         type="file"
                         name="image"
-                        onChange={handleFileInputChange}
-                        value={fileInputState}
-                    />
-
+                        onChange={onFileChange} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="mx-5">
+
+                <Button variant="primary" type="submit" className="mx-5" >
                     Submit
                 </Button>
                 <Button
@@ -113,12 +116,12 @@ const PostForm = (props) => {
                 >
                     Close
                 </Button>
-                {previewSource && (
-                    <img src={previewSource} alt="chosen" height="300px" />
-                )}
-            </Container>
-        </Form>
 
+                {previewSource && (
+                    <img src={previewSource} alt="chosen" height="100px" width="100px" className="ml-auto" />
+                )}
+            </Form>
+        </Container>
 
     ) : (
         ""

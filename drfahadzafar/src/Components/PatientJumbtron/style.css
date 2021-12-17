@@ -1,0 +1,49 @@
+.split-bg {
+	clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 29%);
+	background-color: #333;
+	height: 40vh;
+	color: #fff;
+	background-size: cover;
+	background: linear-gradient(-45deg, #5d6468, #333);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	/* height: 100vh; */
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.text {
+	font-family: "Cormorant Garamond", Serif;
+	font-size: 55px;
+	font-weight: 700;
+	font-size: 42px;
+}
+.space-top {
+	margin-top: 15vh;
+}
+.heading {
+	font-family: "Fira Sans", Sans-Serif;
+	font-size: 35px;
+}
+.title {
+	font-weight: 900;
+	color: #5d6468;
+	font-family: "Cormorant Garamond", Serif;
+	font-size: 55px;
+}
+p {
+	font-family: "Fira Sans", Sans-Serif;
+	font-size: 20px;
+}
+h3 {
+	font-family: "Cormorant Garamond", Serif;
+	font-size: 35px;
+}
