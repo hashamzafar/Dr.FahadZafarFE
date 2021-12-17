@@ -1,5 +1,5 @@
 
-import { Button, Col, Row, Container } from "react-bootstrap"
+import { Button, Col, Row, Container, Navbar, Nav } from "react-bootstrap"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { FaTooth } from "react-icons/fa";
@@ -35,10 +35,53 @@ const ImplantCases = ({ history }) => {
 
 
 
+            <Navbar bg="light" expand="lg">
+                {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto ml-auto">
+                        {/* <Nav.Link value="/crown"
+                            onClick={(e) => changeEndpoint(e)}>   <Button
+                                className="selected"
+                                variant=""
 
+                                value="/crown"
+                                onClick={(e) => changeEndpoint(e)}
+                                className="navlink"
+                            >
+                                Crown Lengthe Surgery{" "}
+                            </Button>
+                        </Nav.Link> */}
+                        <Nav.Link >  <Button variant="" className="navlink" value="/guidedbone" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Guided Bone Regeneration</Button>{' '}</Nav.Link>
+                        <Nav.Link >   <Button variant="" className="navlink" value="/implantsurgery" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Implant Surgery</Button>{' '}</Nav.Link>
+                        <Nav.Link >    <Button variant="" className="navlink" value="/peri" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Peri Implantitis Treatment</Button>{' '}</Nav.Link>
+                        <Nav.Link > <Button variant="" className="navlink" value="/esthetic" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div> Esthetic Problems Implants </Button>{' '}</Nav.Link>
+                        <Nav.Link >        <Button variant="" className="navlink" value="/sinus" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Sinus Lift Procedure</Button></Nav.Link>
+                        {/* <Nav.Link >  <Button
+                            variant="link"
+                            value="/periodontal"
+                            onClick={(e) => changeEndpoint(e)}
+                            className="navlink"
+                        >
+
+                            Periodontal Regenerative Surgery
+                        </Button>{" "}</Nav.Link> */}
+                        {/* <Nav.Link>  <Button
+                            variant=""
+                            value="/pocketelimination"
+                            onClick={(e) => changeEndpoint(e)}
+                            className="navlink"
+                        >
+
+                            Pocket Elimination Surgery
+                        </Button>{" "}</Nav.Link> */}
+                    </Nav>
+
+                </Navbar.Collapse>
+            </Navbar>
             <Row className="cardBg d-flex justify-content-center">
 
-                <div className="mb-4">
+                {/* <div className="mb-4">
                     <nav className="navbar ">
 
 
@@ -56,7 +99,7 @@ const ImplantCases = ({ history }) => {
 
                     </nav>
 
-                </div>
+                </div> */}
 
                 <div >
                     <Row className="ml-0" >
@@ -75,7 +118,7 @@ const ImplantCases = ({ history }) => {
                                             <div className="content">
                                                 <p>{implantData.description}</p>
                                                 {/* <a href="/read">Read More</a> */}
-                                                <Button variant="info" onClick={() => history.push("/read" + endpoint + "/" + implantData._id)}>read more</Button>
+                                                <Button variant="info" className="readMore" onClick={() => history.push("/read" + endpoint + "/" + implantData._id)}>read more</Button>
                                             </div>
                                         </div>
                                     </div>

@@ -8,7 +8,7 @@ const Contacts = () => {
         <>
 
 
-            <Row className="justify-content-center mb-5">
+            <Row className="justify-content-center my-5">
 
                 <Col sm={12} md={4}>
 

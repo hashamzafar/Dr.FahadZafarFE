@@ -1,8 +1,8 @@
 .BT {
 	/* color: white; */
 }
-.BT:hover {
-	background-color: #30789f;
+.readMore:hover {
+	background-color: #5d6468;
 }
 .bg {
 	background-color: #333;
@@ -20,5 +20,10 @@
 	/* padding-top: 50px;
 	padding-bottom: 50px; */
 	/* z-index: 2; */
-	background: linear-gradient(white, #30789f);
+	background: linear-gradient(white, #5d6468);
+}
+.readMore {
+	height: 5vh;
+	width: 10vh;
+	margin: 5px;
 }

@@ -61,7 +61,7 @@
 .btn {
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background: #30789f;
+	background: #5d6468;
 	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
@@ -75,7 +75,7 @@
 
 .btn:hover {
 	transform: translateY(-6px);
-	background: #30789f;
+	background: #5d6468;
 }
 
 .delete:hover {

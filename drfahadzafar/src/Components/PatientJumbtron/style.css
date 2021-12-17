@@ -4,7 +4,7 @@
 	height: 40vh;
 	color: #fff;
 	background-size: cover;
-	background: linear-gradient(-45deg, #30789f, #333);
+	background: linear-gradient(-45deg, #5d6468, #333);
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	/* height: 100vh; */
@@ -35,7 +35,7 @@
 }
 .title {
 	font-weight: 900;
-	color: #30789f;
+	color: #5d6468;
 	font-family: "Cormorant Garamond", Serif;
 	font-size: 55px;
 }

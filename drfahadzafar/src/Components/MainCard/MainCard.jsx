@@ -22,8 +22,8 @@ const MainCard = () => {
                                 </div>
                                 <div className="face face2">
                                     <div className="content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cum cumque minus iste veritatis provident at.</p>
-                                        <a href="#">Read More</a>
+                                        <p>Upcoming courses starting soon...</p>
+                                        {/* <a href="#">Read More</a> */}
                                     </div>
                                 </div>
                             </div></Col>
@@ -38,8 +38,8 @@ const MainCard = () => {
                                 </div>
                                 <div className="face face2">
                                     <div className="content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cum cumque minus iste veritatis provident at.</p>
-                                        <a href="#">Read More</a>
+                                        <p>Keep learning, stay aware of future lectures...</p>
+                                        {/* <a href="#">Read More</a> */}
                                     </div>
                                 </div>
                             </div></Col>

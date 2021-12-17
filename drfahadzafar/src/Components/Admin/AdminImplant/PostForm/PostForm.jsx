@@ -96,7 +96,7 @@ const PostForm = (props) => {
 
                     <textarea
                         onChange={(e) => Inputhandler(e)}
-                        class="form-control"
+                        className="form-control"
                         id="exampleFormControlTextarea1"
                         name="description"
                         rows="10"

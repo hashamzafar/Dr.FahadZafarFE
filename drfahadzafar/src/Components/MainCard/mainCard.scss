@@ -4,7 +4,7 @@
 	// height: 0vh;
 	// min-width: 100%;
 	// opacity: 0.4;
-	background: linear-gradient(white, #30789f);
+	background: linear-gradient(white, #5d6468);
 	// background: linear-gradient(
 	// 	rgba(255, 255, 255, 1) 0%,
 	// 	rgba(48, 120, 159, 1) 50%,
@@ -60,7 +60,7 @@
 }
 
 .container .cards:hover .face.face1 {
-	background: #30789f;
+	background: #5d6468;
 	transform: translateY(0);
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
@@ -132,5 +132,5 @@
 	animation: App-logo-spin 3s linear;
 }
 .fb {
-	color: #30789f;
+	color: #5d6468;
 }

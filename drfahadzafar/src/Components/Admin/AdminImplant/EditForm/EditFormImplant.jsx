@@ -1,10 +1,10 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { ImCancelCircle } from "react-icons/im";
-import "../PostForm/PostForm.css";
+// import "../PostForm/PostForm.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-const EditForm = (props) => {
+const EditFormImplant = (props) => {
     //     // const { title, description, image, _id } = props.articles
     //     // // console.log(_id)
 
@@ -15,25 +15,25 @@ const EditForm = (props) => {
     // console.log(_id)
     // console.log(cases.title, cases.description, cases.image, cases.id)
 
-    const [perio, setPerio] = useState({});
+    const [implant, setImplant] = useState({});
     const [file, setFile] = useState()
-    const getPerio = async () => {
+    const getImplant = async () => {
         try {
-            const data = await axios.get(`${process.env.REACT_APP_API_PERIO}/${props.match.params.endpoint}/${props.match.params.id}`)
+            const data = await axios.get(`${process.env.REACT_APP_API_IMPLANT}/${props.match.params.endpoint}/${props.match.params.id}`)
 
             // console.log("data:", data);
             // const response = await data.json();
-            setPerio(data.data);
-            console.log("response:", perio);
+            setImplant(data.data);
+            console.log("response:", implant);
         } catch (error) { }
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             const response = await fetch(
-                `${process.env.REACT_APP_API_PERIO}/${props.match.params.endpoint}/${props.match.params.id}`, {
+                `${process.env.REACT_APP_API_IMPLANT}/${props.match.params.endpoint}/${props.match.params.id}`, {
                 method: 'PUT',
-                body: JSON.stringify(perio),
+                body: JSON.stringify(implant),
                 headers: {
                     "content-type": "application/json"
                 }
@@ -41,10 +41,10 @@ const EditForm = (props) => {
 
             if (response.ok) {
                 let cases = await response.json()
-                props.history.push("/admin/perio")
+                props.history.push("/admin/implant")
                 console.log(cases)
             }
-            const res = await fetch(`${process.env.REACT_APP_API_PERIO}${props.match.params.endpoint}/${props.match.params.id}/img`, {
+            const res = await fetch(`${process.env.REACT_APP_API_IMPLANT}${props.match.params.endpoint}/${props.match.params.id}/img`, {
                 method: 'POST',
 
                 body: file
@@ -53,7 +53,7 @@ const EditForm = (props) => {
     };
 
     useEffect(async () => {
-        getPerio()
+        getImplant()
 
     }, [])
     // return props.trigger ? (
@@ -71,8 +71,8 @@ const EditForm = (props) => {
                     <Form.Control
                         type="text"
                         name="title"
-                        value={perio.title}
-                        onChange={(e) => setPerio({ ...perio, title: e.target.value })}
+                        value={implant.title}
+                        onChange={(e) => setImplant({ ...implant, title: e.target.value })}
                         placeholder="Title"
 
                     />
@@ -81,8 +81,8 @@ const EditForm = (props) => {
                     <Form.Label for="exampleFormControlTextarea1">Description</Form.Label>
 
                     <textarea
-                        value={perio.description}
-                        onChange={(e) => setPerio({ ...perio, description: e.target.value })}
+                        value={implant.description}
+                        onChange={(e) => setImplant({ ...implant, description: e.target.value })}
                         className="form-control"
                         id="exampleFormControlTextarea1"
                         name="description"
@@ -95,8 +95,8 @@ const EditForm = (props) => {
                         id="exampleFormControlFile1"
                         label="Image"
                         name="image"
-                    // onchange={(e) => setPerio({ ...perio, image: e.target.value })}
-                    // value={perio.image}
+                    // onchange={(e) => setImplant({ ...implant, image: e.target.value })}
+                    // value={implant.image}
                     />
                     {/* {previewSource && (
                         <img src={previewSource} alt="chosen" height="300px" />
@@ -122,4 +122,4 @@ const EditForm = (props) => {
     // );
 };
 
-export default withRouter(EditForm);
+export default withRouter(EditFormImplant);

@@ -12,7 +12,7 @@ const NavBar = () => {
 
             <Navbar.Brand href="/" className="brand" >
 
-                <div class="sign">
+                <div className="sign">
                     <span className="fast-flicker"> </span>FZ<span className="flicker">.</span>Perio
                 </div>
             </Navbar.Brand>
@@ -37,14 +37,14 @@ const NavBar = () => {
                     <Nav.Link href="/contacts" className="mx-2" id="navbar">
                         {/* <MdContactMail />  */}
                         Contacts</Nav.Link>
-                    <Nav.Link href="/login" className="mx-2" id="navbar">
+                    <Nav.Link href="/login" className="mx-2" id="navbar" onClick={() => window.localStorage.setItem("user_Token", " ")}>
                         <FaLock />
                     </Nav.Link>
                 </Nav>
 
             </Navbar.Collapse>
 
-        </Navbar>
+        </Navbar >
 
     )
 }

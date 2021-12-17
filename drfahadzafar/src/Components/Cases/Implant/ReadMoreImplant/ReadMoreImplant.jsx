@@ -28,7 +28,7 @@ const ReadMoreImplant = (props) => {
     return (
         <div className="">
             <img src={implant.image} alt="" />
-            <h1>{implant.title}</h1>
+            <h1>``z      {implant.title}</h1>
             <Container>
                 <p>{implant.description}</p>
             </Container>

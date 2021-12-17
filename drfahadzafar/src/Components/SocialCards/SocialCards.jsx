@@ -23,7 +23,7 @@ const SocialCards = () => {
                     </div></Col>
                 {/* </Container><Container> */}
                 <Col md={12} lg={6} >
-                    <div class="cards ">
+                    <div className="cards ">
                         <div className="face face1 bg-primary">
                             <div className="content">
                                 <FaLinkedin className="social" />
@@ -38,7 +38,7 @@ const SocialCards = () => {
                         </div>
                     </div></Col>
                 <Col md={6}>
-                    <div class="cards ">
+                    <div className="cards ">
                         <div className="face face1 bg-danger">
                             <div className="content">
                                 <FaInstagram className="social ins" />

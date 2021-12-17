@@ -222,7 +222,7 @@ const PerioCases = ({ history }) => {
                                     <div className="content">
                                         <p>{perioData.description.slice(0, 100)}</p>
                                         {/* <a href="/read">Read More</a> */}
-                                        <Button variant="info" onClick={() => history.push("/read" + endpoint + "/" + perioData._id)}>read more</Button>
+                                        <Button variant="info" className="readMore" onClick={() => history.push("/read" + endpoint + "/" + perioData._id)}>read more</Button>
                                     </div>
                                 </div>
                             </div>
