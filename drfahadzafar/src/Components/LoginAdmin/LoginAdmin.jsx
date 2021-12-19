@@ -52,7 +52,7 @@ const Login = (props) => {
     const getUserData = async () => {
         let token = "Bearer " + window.localStorage.getItem("user_Token");
         try {
-            let response = await fetch(`${process.env.REACT_APP_API_LOGIN}/users/me`, {
+            let response = await fetch(`${process.env.REACT_APP_API_LOGIN}/user/me`, {
                 method: "GET",
                 headers: {
                     Authorization: token,
