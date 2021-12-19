@@ -34,6 +34,7 @@ const Login = (props) => {
                     body: JSON.stringify(login),
                 }
             );
+
             if (response.ok) {
                 let userToken = await response.json();
 
