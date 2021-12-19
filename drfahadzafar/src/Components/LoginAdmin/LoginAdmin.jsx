@@ -25,7 +25,7 @@ const Login = (props) => {
         e.preventDefault();
         try {
             let response = await fetch(
-                `${process.env.REACT_APP_API_LOGIN}/users/session`,
+                `${process.env.REACT_APP_API_LOGIN}/user/session`,
                 {
                     method: "POST",
                     headers: {
