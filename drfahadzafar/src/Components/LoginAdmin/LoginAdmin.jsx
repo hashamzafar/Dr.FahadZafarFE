@@ -69,7 +69,7 @@ const Login = (props) => {
                 userDataKeyList.forEach((key) =>
                     window.localStorage.setItem(key, userData[key])
                 );
-                props.history.push("admin");
+                props.history.push("/admin");
             } else {
                 setLoginValidation(true);
                 props.history.push("login")
@@ -80,62 +80,62 @@ const Login = (props) => {
         }
     };
     return (
-        // <div className="">
-        <Container id="container" className="py-5 card-background ">
-            <Form id="login" >
-                <div >
-                    <img
-                        src="../../img/logo2.png"
-                        width="300"
-                        height="300"
-                        alt=""
-                        className="mr-auto logo my-3"
-                    />
+        <div className="card-background py-5">
+            <Container id="container" className="py-5 ">
+                <Form id="login mb-5"  >
+                    <div  >
+                        <img
+                            src="../../img/logo2.png"
+                            width="300"
+                            height="300"
+                            alt=""
+                            className="mr-auto logo my-3"
+                        />
 
-                </div>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label id="title">Email address</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        onChange={(e) => {
-                            handleForm("email", e.target.value);
-                        }}
-                    />
-
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label id="title">Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        onChange={(e) => {
-                            handleForm("password", e.target.value);
-                        }}
-                    />
-                </Form.Group>
-
-
-                <Form.Group controlId="formBasicCheckbox" id="title">
-                    <Form.Check type="checkbox" label="Remember Me" />
-                </Form.Group>
-
-                {loginValidation && (
-                    <div className="container d-flex justify-content-center">
-                        <p className="text-danger">
-                            <strong>Sorry incorrect username :(</strong>
-                        </p>
                     </div>
-                )}
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label id="title">Email address</Form.Label>
+                        <Form.Control
+                            type="email"
+                            placeholder="Enter email"
+                            onChange={(e) => {
+                                handleForm("email", e.target.value);
+                            }}
+                        />
+
+                    </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label id="title">Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Password"
+                            onChange={(e) => {
+                                handleForm("password", e.target.value);
+                            }}
+                        />
+                    </Form.Group>
 
 
-                <Button variant="success" type="submit" className="my-2 btn btn-large w-100" id="btn" onClick={(e) => getUserToken(e)}>
-                    Log in
-                </Button>
+                    <Form.Group controlId="formBasicCheckbox" id="title">
+                        <Form.Check type="checkbox" label="Remember Me" />
+                    </Form.Group>
 
-            </Form>
-        </Container>
-        // </div >
+                    {loginValidation && (
+                        <div className="container d-flex justify-content-center">
+                            <p className="text-danger">
+                                <strong>Sorry incorrect username :(</strong>
+                            </p>
+                        </div>
+                    )}
+
+
+                    <Button variant="success" type="submit" className="my-2 btn btn-large w-100" id="btn" onClick={(e) => getUserToken(e)}>
+                        Log in
+                    </Button>
+
+                </Form>
+            </Container>
+        </div >
     )
 }
 export default Login

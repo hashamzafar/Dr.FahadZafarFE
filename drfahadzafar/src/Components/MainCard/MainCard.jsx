@@ -45,7 +45,7 @@ const MainCard = () => {
                             </div></Col>
                     </Row>
                 </Container>
-                <div className="my-5">
+                <div className="social-container">
                     <span>
                         <a href="https://twitter.com/" target="_blank"  >
                             <FaFacebookF className="social fb" />

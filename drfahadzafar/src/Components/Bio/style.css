@@ -11,7 +11,8 @@
 }
 
 svg text {
-	font-family: Lora;
+	font-family: "Cormorant Garamond", Serif;
+	/* font-family: Lora; */
 	letter-spacing: 7px;
 	stroke: #5d6468;
 	font-size: 10vh;

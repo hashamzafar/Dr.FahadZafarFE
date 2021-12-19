@@ -52,11 +52,11 @@ const ImplantCases = ({ history }) => {
                                 Crown Lengthe Surgery{" "}
                             </Button>
                         </Nav.Link> */}
-                        <Nav.Link >  <Button variant="" className="navlink" value="/guidedbone" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Guided Bone Regeneration</Button>{' '}</Nav.Link>
-                        <Nav.Link >   <Button variant="" className="navlink" value="/implantsurgery" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div>Implant Surgery</Button>{' '}</Nav.Link>
-                        <Nav.Link >    <Button variant="" className="navlink" value="/peri" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Peri Implantitis Treatment</Button>{' '}</Nav.Link>
-                        <Nav.Link > <Button variant="" className="navlink" value="/esthetic" onClick={e => changeEndpoint(e)}> <div><FaTooth /></div> Esthetic Problems Implants </Button>{' '}</Nav.Link>
-                        <Nav.Link >        <Button variant="" className="navlink" value="/sinus" onClick={e => changeEndpoint(e)}><div><FaTooth /></div>Sinus Lift Procedure</Button></Nav.Link>
+                        <Nav.Link >  <Button variant="" className="navlink" value="/guidedbone" onClick={e => changeEndpoint(e)}> Guided Bone Regeneration</Button>{' '}</Nav.Link>
+                        <Nav.Link >   <Button variant="" className="navlink" value="/implantsurgery" onClick={e => changeEndpoint(e)}> Implant Surgery</Button>{' '}</Nav.Link>
+                        <Nav.Link >    <Button variant="" className="navlink" value="/peri" onClick={e => changeEndpoint(e)}>Peri Implantitis Treatment</Button>{' '}</Nav.Link>
+                        <Nav.Link > <Button variant="" className="navlink" value="/esthetic" onClick={e => changeEndpoint(e)}>  Esthetic Problems Implants </Button>{' '}</Nav.Link>
+                        <Nav.Link >        <Button variant="" className="navlink" value="/sinus" onClick={e => changeEndpoint(e)}>Sinus Lift Procedure</Button></Nav.Link>
                         {/* <Nav.Link >  <Button
                             variant="link"
                             value="/periodontal"
@@ -116,7 +116,7 @@ const ImplantCases = ({ history }) => {
                                         </div>
                                         <div className="face face2">
                                             <div className="content">
-                                                <p>{implantData.description}</p>
+                                                <p>{implantData.description.slice(0, 100)}</p>
                                                 {/* <a href="/read">Read More</a> */}
                                                 <Button variant="info" className="readMore" onClick={() => history.push("/read" + endpoint + "/" + implantData._id)}>read more</Button>
                                             </div>

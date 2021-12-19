@@ -21,9 +21,10 @@ import EditForm from './Components/Admin/AdminPerio/EditForm/EditForm';
 import ReadMore from "./Components/Cases/Perio/ReadMorePerio/ReadMorePerio"
 import ImplantCases from "./Components/Cases/Implant/ImplantCases"
 import EditFormImplant from './Components/Admin/AdminImplant/EditForm/EditFormImplant';
+import LearnMore from "./Components/LearnMore/LearnMore"
 function App() {
-  const token = window.localStorage.getItem("user_Token");
-  console.log(window.location.pathname)
+  // const token = window.localStorage.getItem("user_Token");
+  // console.log(window.location.pathname)
   return (
     <div className="App w-100" >
 
@@ -38,31 +39,31 @@ function App() {
         {/* <Route exact path="/home" render={(routerProps) => <TreatmentCarousel />} /> */}
         {/* <Route exact path="/patients" render={(routerProps) => } /> */}
         <Route exact path="/contacts" render={(routerProps) => <Contacts />} />
-        <Route exact path="/healthprofessional" render={(routerProps) => <UpComing />} />
+        {/* <Route exact path="/healthprofessional" render={(routerProps) => <UpComing />} /> */}
         <Route exact path="/patients" render={(routerProps) => <Patients />} />
         <Route exact path="/login" render={(routerProps) => <Login {...routerProps} />} />
         <Route exact path="/perio" render={(routerProps) => <PerioCases {...routerProps} />} />
         <Route exact path="/implant" render={(routerProps) => <ImplantCases {...routerProps} />} />
         {/* make these route private */}
-        {token !== " " ? (
-          <>
-            <Route exact path="/admin" render={(routerProps) => <Admin />} />
-            <Route exact path="/admin/perio" render={(routerProps) => <AdminPerio />} />
-            <Route exact path="/admin/implant" render={(routerProps) => <AdminImplant />} />
-          </>
+        {/* {token !== " " ? (
+          <> */}
+        <Route exact path="/admin" render={(routerProps) => <Admin />} />
+        <Route exact path="/admin/perio" render={(routerProps) => <AdminPerio />} />
+        <Route exact path="/admin/implant" render={(routerProps) => <AdminImplant />} />
+        {/* </>
 
-        ) :
+        ) : */}
 
-          <></>
-          // window.location.pathname === "/admin" && token === " " &&
-          // <Redirect to="/login" />
-
-
+        {/* // <></>
+          window.location.pathname === "/admin" && token === " " &&
+          <Redirect to="/login" />
 
 
 
-        }
 
+
+        } */}
+        <Route exact path="/learn" render={(routerProps) => <LearnMore {...routerProps} />} />
         <Route exact path="/read/:endpoint/:id" render={(routerProps) => <ReadMore {...routerProps} />} />
         <Route exact path="/read/:endpoint/:id" render={(routerProps) => <ReadMoreImplant {...routerProps} />} />
         <Route exact path="/edit/:endpoint/:id" component={EditForm} />
