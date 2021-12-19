@@ -26,9 +26,9 @@ const ReadMoreImplant = (props) => {
         setEndpoint(endpoint);
     };
     return (
-        <div className="">
+        <div className="card-background">
             <img src={implant.image} alt="" />
-            <h1>``z      {implant.title}</h1>
+            <h1>{implant.title}</h1>
             <Container>
                 <p>{implant.description}</p>
             </Container>

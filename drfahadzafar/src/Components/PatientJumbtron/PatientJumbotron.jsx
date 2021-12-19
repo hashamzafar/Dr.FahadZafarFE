@@ -16,7 +16,7 @@ const PatientJumbotron = () => {
                 <Col lg={4}></Col>
                 <Col sm={12} md={6} lg={4}>
                     <h3 className="text space-top">Dental Hygiene</h3>
-                    <p>Dental hygiene is the crespcatform o gentaloes
+                    <p className="heading">Dental hygiene is the crespcatform o gentaloes
                         prevention: With proper and regular oral care, you can help
                         preventioon dec sy and intamins.oy oum diseases,
                         Antino frequent Meite to our dentie.</p>

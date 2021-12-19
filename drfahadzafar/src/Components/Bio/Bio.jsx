@@ -6,7 +6,7 @@ import "./style.css"
 
 const Bio = () => {
     return (
-        // <Container className="">
+
         <Row>
             <Col id="show_bg" sm={12} md={6} lg={4}>
                 <a href="/">Home / About</a>
@@ -14,8 +14,9 @@ const Bio = () => {
                 <hr />
 
                 <img src="../../img/profile.jpg" alt="" className="profile" />
-                <div className="text">Perio Specialist</div>
+                <div className="text">Periodontist</div>
             </Col>
+
             <Col sm={12} md={6} lg={8}>
                 <div className=' text-color '>
                     <div className="patterns">
@@ -37,26 +38,22 @@ const Bio = () => {
                     </div>
 
                     {/* <img src="../../img/logo2.png" className="logo " alt="" width="150" height="150" /> */}
+                    <Container className="">
+                        <div>
+                            <h6 className="text">
+                                Dedicated to Excellence in Dentistry and looking after patients from across the country and abroad since 2015.
+                            </h6>
 
-                    <h4 className="text">
-                        We are dedicated to Excellence in Dentistry and have been looking after patients from across the country and abroad since 2003.
-                    </h4>
-                    <p >
-                        We have a patient centred approach, based on the individual wants and needs of those we serve. Our environment is the perfect balance between a relaxed and friendly ambiance with a clean and professional feel.
+                            <p >
+                                With a patient centred approach, I serve needs of the individual wants. The clinic environment has a balanced, relaxing and friendly ambiance with a clean professional feel. The office of dental practice in Malta is ideally located to serve patients from the surroundings areas, and many people travel from all over the country due to our reputation for the treatment of gum disease and dental implants. The clinic is situated over 2 floors with the ground floor providing easy access for those with mobility issues. Emergency appointments are available as well as late nights and weekends. The minute you step through that door you are made to feel comfortable within a warm, friendly environment. Have a cup of tea or coffee whilst you complete your medical history forms prior to seeing the dentist.
+                            </p>
+                        </div>
 
-                        Our dental practice in Bearwood is ideally located to serve patients from Birmingham and surrounding areas such as Smethwick, West Bromwich, Walsall, Dudley and Halesowen, whilst many people travel from all over the country due to our reputation for the treatment of gum disease and dental implants.
-
-                        We are situated over 2 floors with the ground floor providing easy access for those with mobility issues. Emergency appointments are available as well as late nights and weekends.
-
-                        The minute you step through our door you are made to feel comfortable within a warm, friendly environment. Have a cup of tea or coffee whilst you complete your medical history forms prior to seeing the dentist.
-                    </p>
-
-                </div>
-
+                    </Container > </div>
             </Col>
 
-        </Row>
-        // </Container >
+        </Row >
+
     )
 }
 export default Bio

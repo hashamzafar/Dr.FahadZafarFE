@@ -76,46 +76,11 @@ const AdminImplant = ({ history }) => {
 
 
             </div>
-            {/* <Table striped bordered hover>
+            <button className="btn" onClick={() => setPostForm(true)}>
+                <span className="todo">Add More Article</span>
 
-
-
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Edit/Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td key={i}>{implantData._id}</td>
-                            <td>{implantData.title}</td>
-                            <td>{implantData.description}</td>
-                            <td><img src={implantData.image} alt="" width="30%" height="30px" /></td>
-                            <td>
-                                <Button key={i}
-                                    variant="danger"
-                                    className="mx-3"
-                                    value={implantData._id}
-                                    onClick={() => deleteItem(implantData._id)} ><FaTooth /></Button>
-                                <Button variant="secondary"  > Edit</Button>
-
-                            </td>
-                        </tr>
-                    
-
-
-                    <tr>
-                        <td>Total Cases</td>
-                        <td colSpan="2">50</td>
-                        <td> <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button>
-                        </td>
-                    </tr>
-                </tbody>
-            </Table> */}
+                <span className="function">Add More</span>
+            </button>
             {implant.map((implantData, i) => (<div className="my-5">
 
 

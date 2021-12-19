@@ -25,9 +25,9 @@ const NavBar = () => {
                     <Nav.Link href="/patients" className="mx-2" id="navbar">
                         {/* <GiHealing />    */}
                         Patients</Nav.Link>
-                    <Nav.Link href="/healthprofessional" className="mx-2" id="navbar">
+                    {/* <Nav.Link href="/healthprofessional" className="mx-2" id="navbar">
                         {/* <MdHealing />  */}
-                        Health Professional</Nav.Link>
+                    {/* Health Professional</Nav.Link> */}
                     <Nav.Link href="/perio" className="mx-2" id="navbar">
                         {/* <FaTooth />   */}
                         Perio Cases</Nav.Link>

@@ -6,7 +6,7 @@
 	background-size: cover;
 	background: linear-gradient(-45deg, #5d6468, #333);
 	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
+	animation: gradient 5s ease infinite;
 	/* height: 100vh; */
 }
 @keyframes gradient {
@@ -27,11 +27,11 @@
 	font-size: 42px;
 }
 .space-top {
-	margin-top: 15vh;
+	margin-top: 135px;
 }
 .heading {
-	font-family: "Fira Sans", Sans-Serif;
-	font-size: 35px;
+	font-family: "Cormorant Garamond", Serif;
+	font-size: 25px;
 }
 .title {
 	font-weight: 900;

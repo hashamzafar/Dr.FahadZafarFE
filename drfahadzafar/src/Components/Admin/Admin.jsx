@@ -1,11 +1,20 @@
 import { useHistory } from 'react-router-dom';
 import { Button } from "react-bootstrap"
 import { FaTooth } from "react-icons/fa"
-
+import { useEffect } from 'react';
 const Admin = () => {
 
     let history = useHistory();
+    const checkToken = () => {
+        const token = localStorage.getItem('user_Token')
+        if (!token) {
+            history.replace('/login')
+        }
+    }
 
+    useEffect(() => {
+        checkToken()
+    }, [])
 
     return (
         <div>

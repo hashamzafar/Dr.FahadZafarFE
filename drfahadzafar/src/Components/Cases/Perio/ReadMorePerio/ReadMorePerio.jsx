@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { Container, Row } from "react-bootstrap"
-import "./style.css"
+import "../style.css"
 const ReadMore = (props) => {
     const [perio, setPerio] = useState([]);
 
@@ -31,11 +31,11 @@ const ReadMore = (props) => {
             {/* // <Row> */}
             <img src={perio.image} alt="" className="img" />
 
-            <h1>{perio.title}</h1>
+            <h1 className="title my-5">{perio.title}</h1>
             <Container>
 
 
-                <p>{perio.description}</p></Container>
+                <p className="">{perio.description}</p></Container>
             {/* // </Row> */}
         </div>
     )
