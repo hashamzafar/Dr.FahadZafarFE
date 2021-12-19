@@ -5,210 +5,41 @@ import { Carousel, Row, Col, } from "react-bootstrap"
 
 const TreatmentCarousel = () => {
     return (
-
-        <Carousel className="mb-3 ">
+        <Carousel>
             <Carousel.Item>
-                <Row className="mb-3">
-                    <Col>
-                        <img
-                            className="d-block w-100"
-                            src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Col>
-                    <Col>
-                        <Row className="mb-3">
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption></Col>
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Col>
-
-                        </Row>
-                        <Row className="mb-3">
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Col>
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Col>
-
-                        </Row>
-                    </Col>
-                </Row>
-
+                <img
+                    className="d-block w-100"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIDYnfoYGLyotDQosW1o2QcFzA6vpCT7VzNZjaGfICo0OZvAZqN5nYSFWkF7VYH1Lny8&usqp=CAU"
+                    alt="First slide"
+                />
+                <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <Row className="mb-3">
-                    <Col>
-                        <img
-                            className="d-block w-100"
-                            src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption></Col>
-                    <Col>
-                        <Row className="mb-3">
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Col>
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Col>
+                <img
+                    className="d-block w-100"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIDYnfoYGLyotDQosW1o2QcFzA6vpCT7VzNZjaGfICo0OZvAZqN5nYSFWkF7VYH1Lny8&usqp=CAU"
+                    alt="Second slide"
+                />
 
-                        </Row>
-                        <Row className="mb-3">
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption></Col>
-                            <Col>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Col>
-
-                        </Row>
-                    </Col>
-                </Row>
-
-
+                <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <Row className="mb-3">
-                    <Col md={6}>
-                        <img
-                            className="d-block w-100"
-                            src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
-                    </Col>
-                    <Col>
-                        <Row className="mb-3">
-                            <Col md={3}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Col>
-                            <Col md={3}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Col>
+                <img
+                    className="d-block w-100"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIDYnfoYGLyotDQosW1o2QcFzA6vpCT7VzNZjaGfICo0OZvAZqN5nYSFWkF7VYH1Lny8&usqp=CAU"
+                    alt="Third slide"
+                />
 
-                        </Row>
-                        <Row className="mb-3">
-                            <Col md={3}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Col>
-                            <Col md={3}>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://www.styleitaliano.org/wp-content/uploads/2017/02/4-134938.jpg"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </Carousel.Caption>
-                            </Col>
-
-                        </Row>
-                    </Col>
-                </Row>
-
-
+                <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
 

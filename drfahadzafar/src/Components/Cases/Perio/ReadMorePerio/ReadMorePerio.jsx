@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import { Container, Row } from "react-bootstrap"
+import "../style.css"
 const ReadMore = (props) => {
     const [perio, setPerio] = useState([]);
+
     const [endpoint, setEndpoint] = useState("/crown");
+    const endpoints = props.match.params.endpoint
     const getPeiro = async () => {
         try {
-            const data = await axios.get(`${process.env.REACT_APP_API_PERIO}${endpoint} ` + "/" + props.id)
+            const data = await axios.get(`${process.env.REACT_APP_API_PERIO}/${endpoints}/${props.match.params.id}`)
 
             console.log("data:", data);
             // const response = await data.json();
@@ -16,7 +19,7 @@ const ReadMore = (props) => {
     }
     useEffect(async () => {
         getPeiro()
-    }, [endpoint]);
+    }, [endpoints]);
     const changeEndpoint = (e) => {
         e.preventDefault();
         const endpoint = e.target.value;
@@ -24,12 +27,17 @@ const ReadMore = (props) => {
         setEndpoint(endpoint);
     };
     return (
-        <>
-            <img src={perio.image} alt="" />
-            <h1>{perio.title}</h1>
-            <p>{perio.description}</p>
+        <div className="">
+            {/* // <Row> */}
+            <img src={perio.image} alt="" className="img" />
 
-        </>
+            <h1 className="title my-5">{perio.title}</h1>
+            <Container>
+
+
+                <p className="">{perio.description}</p></Container>
+            {/* // </Row> */}
+        </div>
     )
 }
 export default ReadMore

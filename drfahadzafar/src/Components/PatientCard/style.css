@@ -1,0 +1,40 @@
+#wrapper {
+	margin-left: auto;
+	/* margin-right: auto; */
+	/* margin-top: 20px; */
+	position: relative;
+	overflow: hidden;
+	width: 379px;
+	height: 668px;
+	box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.3);
+	transform: rotate(-2deg);
+	border: 10px solid #fff;
+}
+
+/********BACKGROUND********/
+.background {
+	position: absolute;
+	margin-left: -80px;
+	z-index: 1;
+	animation-name: background;
+	animation-duration: 5s;
+	animation-delay: 0ms;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+@keyframes background {
+	0% {
+		transform: translateX(100px) translateY(0px);
+	}
+	100% {
+		transform: translateX(50px) translateY(0px);
+	}
+}
+
+.learn {
+	color: black;
+}
+.learn:hover {
+	color: #333;
+}
