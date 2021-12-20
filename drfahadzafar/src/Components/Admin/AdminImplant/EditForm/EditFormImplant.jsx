@@ -1,19 +1,13 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { ImCancelCircle } from "react-icons/im";
-// import "../PostForm/PostForm.css";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 const EditFormImplant = (props) => {
-    //     // const { title, description, image, _id } = props.articles
-    //     // // console.log(_id)
 
-    //     // const [cases, setCases] = useState({
-
-    // })
     console.log(props.match.params.id)
-    // console.log(_id)
-    // console.log(cases.title, cases.description, cases.image, cases.id)
+
 
     const [implant, setImplant] = useState({});
     const [file, setFile] = useState()
@@ -21,8 +15,6 @@ const EditFormImplant = (props) => {
         try {
             const data = await axios.get(`${process.env.REACT_APP_API_IMPLANT}/${props.match.params.endpoint}/${props.match.params.id}`)
 
-            // console.log("data:", data);
-            // const response = await data.json();
             setImplant(data.data);
             console.log("response:", implant);
         } catch (error) { }
@@ -56,16 +48,11 @@ const EditFormImplant = (props) => {
         getImplant()
 
     }, [])
-    // return props.trigger ? (
+
     return (
         <Container>
             <Form className="popup" onSubmit={handleSubmit}>
-                {/* <Button
-                    className="btn-sm btn-danger mx-5"
-                    onClick={() => props.setTrigger(false)}
-                >
-                    <ImCancelCircle />
-                </Button> */}
+
                 <Form.Group controlId="formBasicEmail" className="mx-5 py-3">
                     <Form.Label>Title</Form.Label>
                     <Form.Control
@@ -98,20 +85,13 @@ const EditFormImplant = (props) => {
                     // onchange={(e) => setImplant({ ...implant, image: e.target.value })}
                     // value={implant.image}
                     />
-                    {/* {previewSource && (
-                        <img src={previewSource} alt="chosen" height="300px" />
-                    )} */}
+
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className="mx-5">
                     Save
                 </Button>
-                {/* <Button
-                    className="btn btn-danger mx-5"
-                // onClick={() => props.setTrigger(false)}
-                >
-                    close
-                </Button> */}
+
 
             </Form>
 

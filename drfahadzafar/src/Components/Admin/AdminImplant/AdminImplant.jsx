@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap"
-import { FaTooth } from "react-icons/fa"
-import { axios } from "axios"
+import { Button } from "react-bootstrap"
+
 import PostForm from "./PostForm/PostForm"
 import { RiArrowGoBackFill } from "react-icons/ri"
 const AdminImplant = ({ history }) => {
@@ -40,9 +39,7 @@ const AdminImplant = ({ history }) => {
         setEndpoint(endpoint)
     }
     const deleteItem = async (_id) => {
-        // e.preventDefault();
-        // const id = e.target.value;
-        // console.log(id)
+
         try {
             const response = await fetch(`${process.env.REACT_APP_API_IMPLANT}${endpoint}/${_id}`, {
                 method: 'DELETE'

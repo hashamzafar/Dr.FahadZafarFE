@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { Table, Button, Container } from "react-bootstrap";
-import { FaTooth } from "react-icons/fa";
+import { Button } from "react-bootstrap";
 import PostForm from "./PostForm/PostForm";
 import axios from "axios";
-import EditForm from "./EditForm/EditForm";
 import { RiArrowGoBackFill } from "react-icons/ri"
-// import PostModel from "../../Testpost/TestPost"
 import { withRouter } from "react-router-dom";
 import "./style.css"
 
@@ -14,10 +11,9 @@ const AdminPerio = ({ history }) => {
     const [perio, setPerio] = useState([]);
     const [endpoint, setEndpoint] = useState("/crown");
     const [postForm, setPostForm] = useState(false)
-    const [editForm, setEditForm] = useState(false)
+    // const [editForm, setEditForm] = useState(false)
     const [data, setData] = useState()
-    // setData(perio.data)
-    // console.log("i m data", perio.data)
+
     useEffect(async () => {
         getPerio()
     }, [endpoint]);
@@ -30,9 +26,6 @@ const AdminPerio = ({ history }) => {
     const getPerio = async () => {
         try {
             const data = await axios.get(`${process.env.REACT_APP_API_PERIO}${endpoint}`)
-
-            // console.log("data:", data);
-            // const response = await data.json();
             setPerio(data.data);
             console.log("response:", perio);
         } catch (error) { }
@@ -41,16 +34,11 @@ const AdminPerio = ({ history }) => {
     const changeEndpoint = (e) => {
         e.preventDefault();
         const endpoint = e.target.value;
-        // console.log(endpoint);
         setEndpoint(endpoint);
     };
 
-    // console.log("im perio", perio)
-
     const deleteItem = async (_id) => {
-        // e.preventDefault();
-        // const id = e.target.value;
-        // console.log(id)
+
         try {
             const response = await axios.delete(`${process.env.REACT_APP_API_PERIO}${endpoint}/` + _id)
             if (response) {
@@ -65,7 +53,7 @@ const AdminPerio = ({ history }) => {
         }
     };
 
-    // const { title, description, image, _id } = data
+
 
     return (
         <div>
@@ -156,16 +144,9 @@ const AdminPerio = ({ history }) => {
                     <span className="function">Add More</span>
                 </button>
                 <div>
-                    {/* <Button variant="success" onClick={() => setPostForm(true)}> Add more</Button> */}
                     {perio.map((perioData, i) => (
 
                         <div className="my-5">
-
-
-
-
-
-
                             <div id="container">
 
                                 <div className="product-details mx-5">
@@ -209,17 +190,11 @@ const AdminPerio = ({ history }) => {
 
 
                     ))}
-                    {/* onClick={(e) => } */}
-
-
-
                 </div>
             </div>
 
             <PostForm trigger={postForm} getPerio={getPerio} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostForm>
-            {/* <PostMode trigger={postForm} setTrigger={setPostForm} endpoint={endpoint}><h3>hello pop up</h3></PostModel> */}
-            {/* {console.log("im perio edit", perio._id)}l */}
-            {/* <EditForm trigger={editForm} setTrigger={setEditForm} endpoint={endpoint} /> */}
+
 
         </div>
     );

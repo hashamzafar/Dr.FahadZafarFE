@@ -1,6 +1,6 @@
 import { Form, Button, Container } from "react-bootstrap";
 import "./PostForm.css";
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 

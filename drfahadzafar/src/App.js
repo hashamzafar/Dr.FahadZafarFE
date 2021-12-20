@@ -5,12 +5,9 @@ import PageHeader from './Components/Jumbotron/Jumbotron'
 import Footer from './Components/Footer/Footer'
 import Bio from "./Components/Bio/Bio"
 import ReadMoreImplant from "./Components/Cases/Implant/ReadMoreImplant/ReadMoreImplant"
-// import TreatmentCarousel from './Components/Carousel/Carousel'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Contacts from './Components/Contacts/Contacts'
-import UpComing from './Components/HealthProfessional/UpComing'
 import Patients from './Components/Patients/Patient'
-// import ArtEduMain from './Components/Arti&eduMain/artEduMain';
 import Login from "./Components/LoginAdmin/LoginAdmin"
 import Admin from "./Components/Admin/Admin"
 import AdminPerio from "./Components/Admin/AdminPerio/AdminPerio"
@@ -23,23 +20,16 @@ import ImplantCases from "./Components/Cases/Implant/ImplantCases"
 import EditFormImplant from './Components/Admin/AdminImplant/EditForm/EditFormImplant';
 import LearnMore from "./Components/LearnMore/LearnMore"
 function App() {
-  // const token = window.localStorage.getItem("user_Token");
-  // console.log(window.location.pathname)
+
   return (
     <div className="App w-100" >
 
       <NavBar />
       <Router>
         <Route exact path="/" render={(routerProps) => <PageHeader />} />
-        {/* <Route exact path="/home" render={(routerProps) => <ArtEduMain />} /> */}
         <Route exact path="/" render={(routerProps) => <Bio />} />
         <Route exact path="/" render={(routerProps) => <MainCard />} />
-
-
-        {/* <Route exact path="/home" render={(routerProps) => <TreatmentCarousel />} /> */}
-        {/* <Route exact path="/patients" render={(routerProps) => } /> */}
         <Route exact path="/contacts" render={(routerProps) => <Contacts />} />
-        {/* <Route exact path="/healthprofessional" render={(routerProps) => <UpComing />} /> */}
         <Route exact path="/patients" render={(routerProps) => <Patients />} />
         <Route exact path="/login" render={(routerProps) => <Login {...routerProps} />} />
         <Route exact path="/perio" render={(routerProps) => <PerioCases {...routerProps} />} />
@@ -74,27 +64,6 @@ function App() {
     </ div >
   );
 }
-// return (
-//   <Router>
-//     {user.islogin ? (
-//       <div className="main_container">
-//         <Nav />
-//         <Switch>
-//           <Route exact path="/">
-//             <Home />
-//           </Route>
-//           <Route path="/NewActiv">
-//             <NewActiv />
-//           </Route>
-//         </Switch>
-//       </div>
-//     ) : (
-//       <Switch>
-//         <Route exact path="/">
-//           <Login />
-//         </Route>
-//       </Switch>
-//     )}
-//   </Router>
-// );
+
+
 export default App;
