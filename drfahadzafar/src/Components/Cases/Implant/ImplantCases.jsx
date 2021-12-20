@@ -73,7 +73,7 @@ const ImplantCases = ({ history }) => {
                                             <div className="content">
                                                 <p>{implantData.description.slice(0, 100)}</p>
                                                 {/* <a href="/read">Read More</a> */}
-                                                <Button variant="info" className="readMore" onClick={() => history.push("/read" + endpoint + "/" + implantData._id)}>read more</Button>
+                                                <Button variant="info" className="readMore" onClick={() => history.push("/read" + endpoint + "/" + implantData._id)}>Read More</Button>
                                             </div>
                                         </div>
                                     </div>
