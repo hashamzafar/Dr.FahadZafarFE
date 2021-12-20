@@ -21,7 +21,7 @@ const SocialCards = () => {
                             </div>
                         </div>
                     </div></Col>
-                {/* </Container><Container> */}
+
                 <Col md={12} lg={6} >
                     <div className="cards ">
                         <div className="face face1 bg-primary">

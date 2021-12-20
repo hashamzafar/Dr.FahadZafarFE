@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import TreatmentCarousel from '../../Components/Carousel/Carousel'
+
 import PatientJumbotron from "../PatientJumbtron/PatientJumbotron"
 import PatientCard from '../PatientCard/PatientCard'
 const Patients = () => {

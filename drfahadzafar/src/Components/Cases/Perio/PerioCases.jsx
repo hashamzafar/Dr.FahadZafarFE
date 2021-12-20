@@ -1,12 +1,8 @@
 // import "./perioCases.css"
-import { Card, Button, Col, Row, Container, Navbar, Nav } from "react-bootstrap"
+import { Button, Col, Row, Container, Navbar, Nav } from "react-bootstrap"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { FaTooth } from "react-icons/fa";
-import ReadMore from "./ReadMorePerio/ReadMorePerio"
-import { Route } from "react-router-dom"
 import "../../MainCard/mainCard.scss"
-import { withRouter } from "react-router-dom";
 import "./style.css"
 const PerioCases = ({ history }) => {
     const [perio, setPerio] = useState([]);
@@ -36,9 +32,8 @@ const PerioCases = ({ history }) => {
 
     return (
         <>
-            {/* <div className="mb-4"> */}
+
             <Navbar bg="light" expand="lg">
-                {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto ml-auto">
@@ -124,87 +119,7 @@ const PerioCases = ({ history }) => {
 
                 </Navbar.Collapse>
             </Navbar>
-            {/* <nav className="navbar ">
 
-                <Button
-                    className="selected"
-                    variant=""
-
-                    value="/crown"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    {" "}
-                    <div>
-                        <FaTooth />
-                    </div>{" "}
-                    Crown Lengthe Surgery{" "}
-                </Button>{" "}
-                <Button
-                    variant=""
-                    value="/frenulectomy"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    {" "}
-                    <div>
-                        <FaTooth />
-                    </div>
-                    Frenulectomy
-                </Button>{" "}
-                <Button
-                    variant=""
-                    value="/gum"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    {" "}
-                    <div>
-                        <FaTooth />
-                    </div>
-                    Gum Plastic Surgery
-                </Button>{" "}
-                <Button
-                    variant=""
-                    value="/canine"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    <div>
-                        <FaTooth />
-                    </div>
-                    Impacted Canine Exposure
-                </Button>{" "}
-                <Button
-                    variant=""
-                    value="/nonsurgical"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    <div>
-                        <FaTooth />
-                    </div>
-                    Non Surgical Therapy
-                </Button>
-                <Button
-                    variant=""
-                    value="/periodontal"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    <div>
-                        <FaTooth />
-                    </div>
-                    Periodontal Regenerative Surgery
-                </Button>{" "}
-                <Button
-                    variant=""
-                    value="/pocketelimination"
-                    onClick={(e) => changeEndpoint(e)}
-                >
-                    <div>
-                        <FaTooth />
-                    </div>
-                    Pocket Elimination Surgery
-                </Button>{" "}
-
-            </nav> </div> */}
-
-            {/* <CasesNavbar value="/frenulectomy" /> */}
 
 
             <Row className="cardBg ml-0 mx-0">
@@ -221,7 +136,7 @@ const PerioCases = ({ history }) => {
                                 <div className="face face2">
                                     <div className="content">
                                         <p>{perioData.description.slice(0, 100)}</p>
-                                        {/* <a href="/read">Read More</a> */}
+
                                         <Button variant="info" className="readMore" onClick={() => history.push("/read" + endpoint + "/" + perioData._id)}>read more</Button>
                                     </div>
                                 </div>

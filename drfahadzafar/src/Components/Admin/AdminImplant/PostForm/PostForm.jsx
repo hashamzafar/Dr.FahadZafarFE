@@ -1,5 +1,4 @@
 import { Form, Button, Container } from "react-bootstrap";
-// import "./PostForm.css";
 import { useEffect, useState } from "react"
 
 
@@ -66,9 +65,6 @@ const PostForm = (props) => {
             console.log(response, 'check api with axios')
 
             console.log("submitted 2")
-
-            // here we should refetch the list
-            // and close the modal
             props.getImplant()
             props.setTrigger(false)
         } catch (error) {

@@ -1,6 +1,6 @@
 import "./mainCard.scss"
 import { Container, Row, Col } from "react-bootstrap"
-import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa"
 
 
 
@@ -39,7 +39,6 @@ const MainCard = () => {
                                 <div className="face face2">
                                     <div className="content">
                                         <p>Keep learning, stay aware of future lectures...</p>
-                                        {/* <a href="#">Read More</a> */}
                                     </div>
                                 </div>
                             </div></Col>

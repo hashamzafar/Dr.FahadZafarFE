@@ -1,7 +1,5 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
-// import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 import SocialCards from "../SocialCards/SocialCards"
-// import { FaFacebookF } from "react-icons/fa"
 import "./contact.scss"
 const Contacts = () => {
     return (

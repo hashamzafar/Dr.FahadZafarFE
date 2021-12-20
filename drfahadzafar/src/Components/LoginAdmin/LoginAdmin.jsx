@@ -1,8 +1,7 @@
 import { Form, Button, Container } from 'react-bootstrap'
 import { useState } from "react";
 import "./style.css"
-import { Link } from "react-router-dom"
-import { Formik, Field } from "formik"
+
 
 const Login = (props) => {
 
@@ -34,6 +33,7 @@ const Login = (props) => {
                     body: JSON.stringify(login),
                 }
             );
+
             if (response.ok) {
                 let userToken = await response.json();
 
