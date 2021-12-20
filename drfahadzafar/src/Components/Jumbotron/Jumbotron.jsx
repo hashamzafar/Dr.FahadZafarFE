@@ -1,5 +1,5 @@
 
-import { Jumbotron, Col, Row } from 'react-bootstrap'
+import { Jumbotron } from 'react-bootstrap'
 import "./style.css"
 
 

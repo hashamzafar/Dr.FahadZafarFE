@@ -8,8 +8,6 @@ import LearnJumbotron from "./LearnJumbotron"
 const LearnMore = () => {
     return (
         <>
-
-            {/* <img src="../../img/pick.png" alt="" w-100 /> */}
             <LearnJumbotron />
 
 
